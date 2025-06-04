@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhuocheng Duan - PhD Researcher</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav {
+            background: rgba(52, 73, 94, 0.9);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav li {
+            margin: 0;
+        }
+
+        .nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .nav a:hover::before {
+            left: 100%;
+        }
+
+        .nav a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.4s; }
+        .section:nth-child(4) { animation-delay: 0.6s; }
+        .section:nth-child(5) { animation-delay: 0.8s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2.2em;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .bio-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: start;
+            margin-bottom: 30px;
+        }
+
+        .bio-info {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .bio-info h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .bio-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .bio-info p strong {
+            min-width: 100px;
+            color: #495057;
+        }
+
+        .bio-description {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .publication {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid #667eea;
+        }
+
+        .publication:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .publication h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            line-height: 1.4;
+        }
+
+        .publication p {
+            color: #666;
+            font-size: 0.95em;
+            margin-bottom: 8px;
+        }
+
+        .journal-info {
+            display: inline-block;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .education-item, .research-item {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #764ba2;
+            transition: all 0.3s ease;
+        }
+
+        .education-item:hover, .research-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .education-item h3, .research-item h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .date-location {
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-item {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-icon {
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-category h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .award-item {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #ffd700;
+        }
+
+        .award-item h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .award-year {
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .bio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .nav ul {
+                flex-direction: column;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Zhuocheng Duan</h1>
+            <p>PhD Researcher | Sustainable Building Design | Climate Change Impact Assessment</p>
+        </header>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <section id="about" class="section">
+                <h2>About Me</h2>
+                <div class="bio-grid">
+                    <div class="bio-info">
+                        <h3>Quick Info</h3>
+                        <p><strong>Position:</strong> PhD Student</p>
+                        <p><strong>Institution:</strong> University of Adelaide</p>
+                        <p><strong>Nationality:</strong> Chinese</p>
+                        <p><strong>Born:</strong> July 31, 1997</p>
+                        <p><strong>Scholarship:</strong> Research Training Program</p>
+                    </div>
+                    <div class="bio-description">
+                        <p>I am a PhD researcher at the University of Adelaide, specializing in the impact of climate change on building energy performance and the carbon footprint of sustainable construction materials, particularly cross-laminated timber buildings.</p>
+                        
+                        <p>My research focuses on developing quantitative methodologies to assess how climate change affects thermal building performance and energy conservation measures. I combine life cycle assessment techniques with building energy simulation to understand the long-term environmental impacts of different construction approaches.</p>
+                        
+                        <p>With a strong background in architecture and sustainable design, I have published extensively in top-tier journals and am actively involved in international research collaborations, including the IEA EBC Annex 89 project on implementing net-zero whole life carbon buildings.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="publications" class="section">
+                <h2>Publications</h2>
+                
+                <div class="publication">
+                    <h3>Challenges in predicting the impact of climate change on thermal building performance through simulation: A systematic review</h3>
+                    <p><strong>Authors:</strong> Duan, Z., de Wilde, P., Attia, S., & Zuo, J.</p>
+                    <p><strong>Journal:</strong> Applied Energy (2025), 382, 125331</p>
+                    <span class="journal-info">JCR Q1, IF=10.1</span>
+                </div>
+
+                <div class="publication">
+                    <h3>Impact of climate change on energy performance and energy conservation measures effectiveness in Australian office buildings</h3>
+                    <p><strong>Authors:</strong> Duan, Z., Omrany, H., & Zuo, J.</p>
+                    <p><strong>Journal:</strong> Energy (2025), 134956</p>
+                    <span class="journal-info">JCR Q1, IF=9.0</span>
+                </div>
+
+                <div class="publication">
+                    <h3>Prospect of energy conservation measures (ECMs) in buildings subject to climate change: A systematic review</h3>
+                    <p><strong>Authors:</strong> Duan, Z., de Wilde, P., Attia, S., & Zuo, J.</p>
+                    <p><strong>Journal:</strong> Energy and Buildings (2024), 114739</p>
+                    <span class="journal-info">JCR Q1, IF=6.6</span>
+                </div>
+
+                <div class="publication">
+                    <h3>Impact of climate change on the life cycle greenhouse gas emissions of cross-laminated timber and reinforced concrete buildings in China</h3>
+                    <p><strong>Authors:</strong> Duan, Z.</p>
+                    <p><strong>Journal:</strong> Journal of Cleaner Production (2023), 136446</p>
+                    <span class="journal-info">JCR Q1, IF=9.7</span>
+                </div>
+
+                <div class="publication">
+                    <h3>Life cycle assessment of mass timber construction: A review</h3>
+                    <p><strong>Authors:</strong> Duan, Z., Huang, Q., & Zhang, Q.</p>
+                    <p><strong>Journal:</strong> Building and Environment (2022), 221, 109320</p>
+                    <span class="journal-info">JCR Q1, IF=7.1</span>
+                </div>
+
+                <div class="publication">
+                    <h3>Comparative life cycle assessment of a reinforced concrete residential building with equivalent cross laminated timber alternatives in China</h3>
+                    <p><strong>Authors:</strong> Duan, Z., Huang, Q., Sun, Q., & Zhang, Q.</p>
+                    <p><strong>Journal:</strong> Journal of Building Engineering (2022), 105357</p>
+                    <span class="journal-info">JCR Q1, IF=6.7</span>
+                </div>
+            </section>
+
+            <section id="education" class="section">
+                <h2>Education</h2>
+                
+                <div class="education-item">
+                    <h3>PhD in Architecture</h3>
+                    <div class="date-location">January 2024 - Present | University of Adelaide, Australia</div>
+                    <p><strong>Scholarship:</strong> Research Training Program Scholarship</p>
+                    <p><strong>Focus:</strong> Impact of climate change on building energy and carbon footprint of cross-laminated timber buildings</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>Master of Architecture</h3>
+                    <div class="date-location">September 2020 - June 2023 | Tianjin University, China</div>
+                    <p><strong>Grade:</strong> 91.18/100 (Top 5%)</p>
+                    <p><strong>Thesis:</strong> Life cycle assessment of mass timber construction in China</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>Bachelor of Architecture</h3>
+                    <div class="date-location">September 2015 - June 2020 | Wuhan University of Technology, China</div>
+                    <p><strong>Grade:</strong> 89.42/100 (Top 5%)</p>
+                    <p><strong>Focus:</strong> Post occupancy evaluation, campus space activation</p>
+                </div>
+            </section>
+
+            <section id="research" class="section">
+                <h2>Research Experience</h2>
+                
+                <div class="research-item">
+                    <h3>IEA EBC Annex 89: Implementing Net-Zero Whole Life Carbon Buildings</h3>
+                    <div class="date-location">July 2024 - Present | University of Adelaide</div>
+                    <p><strong>Position:</strong> Research Collaborator (Supervised by Prof. Jian Zuo)</p>
+                    <p>Linking PhD research with IEA Annex 89 objectives, fostering collaboration with global researchers focused on achieving net-zero carbon emissions.</p>
+                </div>
+
+                <div class="research-item">
+                    <h3>National Key Research and Development Program of China</h3>
+                    <div class="date-location">September 2020 - January 2023 | Tianjin University</div>
+                    <p><strong>Position:</strong> Researcher (Supervised by Prof. Qiong Huang)</p>
+                    <p><strong>Project:</strong> Goal and effect-oriented green building design principles and methodologies</p>
+                    <ul>
+                        <li>Conducted systematic review on life cycle assessment of mass timber construction</li>
+                        <li>Developed quantitative evaluations of life cycle greenhouse gas emissions for residential buildings</li>
+                        <li>Assessed climate change impact on heating and cooling energy demand</li>
+                    </ul>
+                </div>
+
+                <div class="research-item">
+                    <h3>Independent Innovation Project - Campus Space Activation</h3>
+                    <div class="date-location">March 2018 - March 2019 | Wuhan University of Technology</div>
+                    <p><strong>Position:</strong> Researcher (Supervised by Prof. Yi Zhang)</p>
+                    <p>Study on the activation of negative space in university campus from the perspective of space acupuncture</p>
+                </div>
+            </section>
+
+            <section id="skills" class="section">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>3D Modeling & Design</h4>
+                        <p>AutoCAD, Revit, SketchUp, Rhinoceros, Grasshopper</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Post-Processing</h4>
+                        <p>Photoshop, Illustrator, InDesign</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Programming & Analysis</h4>
+                        <p>Python (Content analysis, Semantic analysis)</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Languages</h4>
+                        <p>English: IELTS 7.0<br>Chinese: Native</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="awards" class="section">
+                <h2>Awards & Recognition</h2>
+                <div class="awards-grid">
+                    <div class="award-item">
+                        <h4>CLIVE E. BOYCE Research Scholarship in Architecture</h4>
+                        <p class="award-year">2025</p>
+                    </div>
+                    <div class="award-item">
+                        <h4>Research Training Program Scholarship</h4>
+                        <p class="award-year">2024</p>
+                    </div>
+                    <div class="award-item">
+                        <h4>First Place - 3rd Solar Decathlon China</h4>
+                        <p class="award-year">2022</p>
+                        <p>Key member of winning team</p>
+                    </div>
+                    <div class="award-item">
+                        <h4>China National Scholarship (0.2%)</h4>
+                        <p class="award-year">2022</p>
+                    </div>
+                    <div class="award-item">
+                        <h4>Tianjin University First-class Scholarship</h4>
+                        <p class="award-year">2021, 2022</p>
+                        <p>Top 10% of students</p>
+                    </div>
+                    <div class="award-item">
+                        <h4>Outstanding Graduates</h4>
+                        <p class="award-year">2020</p>
+                        <p>Wuhan University of Technology</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section">
+                <h2>Contact Information</h2>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <h3>Email</h3>
+                        <p>zhuocheng.duan@adelaide.edu.au</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <h3>Phone</h3>
+                        <p>0410615608</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🎓</div>
+                        <h3>Google Scholar</h3>
+                        <p>View my publications and citations</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🏛️</div>
+                        <h3>Institution</h3>
+                        <p>School of Architecture and Civil Engineering<br>University of Adelaide</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add active state to navigation
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.background = '';
+                if (link.getAttribute('href') === '#' + current) {
+                    link.style.background = 'rgba(255, 255, 255, 0.2)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
