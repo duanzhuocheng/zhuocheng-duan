@@ -14,16 +14,17 @@
         }
 
         :root {
-            --primary-dark: #0a0a0a;
+            --primary-dark: #1a1a1a;
             --primary-light: #ffffff;
             --accent-gold: #d4af37;
-            --accent-blue: #2563eb;
-            --accent-gray: #6b7280;
-            --surface-dark: #1a1a1a;
+            --accent-blue: #2c3e50;
+            --accent-gray: #64748b;
+            --surface-dark: #262626;
             --surface-light: #f8fafc;
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-dark: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-            --gradient-gold: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
+            --gradient-primary: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #262626 100%);
+            --gradient-gold: linear-gradient(135deg, #f1c40f 0%, #d4af37 100%);
+            --gradient-accent: linear-gradient(135deg, #d4af37 0%, #f39c12 100%);
         }
 
         body {
@@ -358,6 +359,101 @@
             letter-spacing: 0.5px;
         }
 
+        .doi-link {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 4px 8px;
+            border-radius: 12px;
+            background: rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .doi-link:hover {
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .publication-toggle {
+            background: none;
+            border: none;
+            color: var(--accent-blue);
+            font-weight: 600;
+            cursor: pointer;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 2px solid var(--accent-blue);
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .publication-toggle:hover {
+            background: var(--accent-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .publication-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            margin-top: 15px;
+        }
+
+        .publication-details.expanded {
+            max-height: 500px;
+        }
+
+        .publication-abstract {
+            background: var(--surface-light);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border-left: 3px solid var(--accent-gold);
+        }
+
+        .publication-abstract h5 {
+            color: var(--accent-blue);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .publication-abstract p {
+            line-height: 1.7;
+            color: var(--accent-gray);
+        }
+
+        .publication-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+            align-items: center;
+        }
+
+        .pdf-link {
+            background: var(--gradient-dark);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .pdf-link:hover {
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
         /* Education & Research Timeline */
         .timeline {
             position: relative;
@@ -371,7 +467,7 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: var(--gradient-primary);
+            background: var(--gradient-gold);
         }
 
         .timeline-item {
@@ -462,7 +558,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: var(--gradient-primary);
+            background: var(--gradient-gold);
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
@@ -767,57 +863,135 @@
                     
                     <div class="publications-grid">
                         <div class="publication fade-in">
-                            <h3>Challenges in predicting the impact of climate change on thermal building performance through simulation: A systematic review</h3>
-                            <div class="publication-meta">
-                                <span><strong>Authors:</strong> Duan, Z., de Wilde, P., Attia, S., & Zuo, J.</span>
-                                <span><strong>Journal:</strong> Applied Energy (2025)</span>
-                            </div>
-                            <span class="journal-badge">JCR Q1 • IF: 10.1</span>
-                        </div>
-
-                        <div class="publication fade-in">
                             <h3>Impact of climate change on energy performance and energy conservation measures effectiveness in Australian office buildings</h3>
                             <div class="publication-meta">
                                 <span><strong>Authors:</strong> Duan, Z., Omrany, H., & Zuo, J.</span>
-                                <span><strong>Journal:</strong> Energy (2025)</span>
+                                <span><strong>Journal:</strong> Energy (2025), 319, 134956</span>
                             </div>
-                            <span class="journal-badge">JCR Q1 • IF: 9.0</span>
+                            <div class="publication-links">
+                                <span class="journal-badge">JCR Q1 • IF: 9.0</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2025-energy-australia-office-buildings.pdf" class="pdf-link" target="_blank">📄 PDF</a>
+                                <a href="https://doi.org/10.1016/j.energy.2025.134956" class="doi-link" target="_blank">🔗 DOI</a>
+                            </div>
+                            
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract ↓</button>
+                            <div class="publication-details">
+                                <div class="publication-abstract">
+                                    <h5>Abstract</h5>
+                                    <p>This paper examines the impact of climate change on office buildings in ten Australian cities, representing diverse climatic conditions. Energy simulations were conducted using Grasshopper with Ladybug tools in Rhino for a 10-storey office building, followed by a sensitivity analysis to evaluate the effectiveness of energy conservation measures (ECMs) under global warming.</p>
+                                    <p><strong>Key Results:</strong> Significant increases in cooling demands (up to 38% under SSP585_2080 scenario), heating demand decreases (48-81% for all cases), and potential 70% reduction in building GHG emissions by 2080 due to electricity decarbonization.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="publication fade-in">
+                            <h3>Challenges in predicting the impact of climate change on thermal building performance through simulation: A systematic review</h3>
+                            <div class="publication-meta">
+                                <span><strong>Authors:</strong> Duan, Z., de Wilde, P., Attia, S., & Zuo, J.</span>
+                                <span><strong>Journal:</strong> Applied Energy (2025), 382, 125331</span>
+                            </div>
+                            <div class="publication-links">
+                                <span class="journal-badge">JCR Q1 • IF: 10.1</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2025-applied-energy-climate-simulation.pdf" class="pdf-link" target="_blank">📄 PDF</a>
+                                <a href="#" class="doi-link" target="_blank">🔗 DOI</a>
+                            </div>
+                            
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract ↓</button>
+                            <div class="publication-details">
+                                <div class="publication-abstract">
+                                    <h5>Abstract</h5>
+                                    <p>The intricate relationship between climate change and the building sector is characterized by a self-reinforcing loop. Rising temperatures driven by global warming will inevitably impact heating and cooling energy, while buildings simultaneously contribute significantly to carbon emissions throughout their lifecycle.</p>
+                                    <p><strong>Key Findings:</strong> Identifies inconsistencies in methods and geographical disparities, scaling challenges from individual building to district-level predictions, and emphasizes the need for robust design using latest models and scenarios.</p>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="publication fade-in">
                             <h3>Prospect of energy conservation measures (ECMs) in buildings subject to climate change: A systematic review</h3>
                             <div class="publication-meta">
                                 <span><strong>Authors:</strong> Duan, Z., de Wilde, P., Attia, S., & Zuo, J.</span>
-                                <span><strong>Journal:</strong> Energy and Buildings (2024)</span>
+                                <span><strong>Journal:</strong> Energy and Buildings (2024), 322, 114739</span>
                             </div>
-                            <span class="journal-badge">JCR Q1 • IF: 6.6</span>
-                        </div>
-
-                        <div class="publication fade-in">
-                            <h3>Impact of climate change on the life cycle greenhouse gas emissions of cross-laminated timber and reinforced concrete buildings in China</h3>
-                            <div class="publication-meta">
-                                <span><strong>Authors:</strong> Duan, Z.</span>
-                                <span><strong>Journal:</strong> Journal of Cleaner Production (2023)</span>
+                            <div class="publication-links">
+                                <span class="journal-badge">JCR Q1 • IF: 6.6</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2024-energy-buildings-ecm-review.pdf" class="pdf-link" target="_blank">📄 PDF</a>
+                                <a href="#" class="doi-link" target="_blank">🔗 DOI</a>
                             </div>
-                            <span class="journal-badge">JCR Q1 • IF: 9.7</span>
+                            
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract ↓</button>
+                            <div class="publication-details">
+                                <div class="publication-abstract">
+                                    <h5>Abstract</h5>
+                                    <p>This systematic review examines the effectiveness of energy conservation measures (ECMs) in buildings under future climate scenarios. The study analyzes how climate change will affect the performance of various building technologies currently employed for energy efficiency.</p>
+                                    <p><strong>Key Insights:</strong> Future climate may shift heating-dominated regions into cooling-dominant environments. Solar controls will be more pronounced in the future, emphasizing the need for flexible ECMs.</p>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="publication fade-in">
                             <h3>Life cycle assessment of mass timber construction: A review</h3>
                             <div class="publication-meta">
                                 <span><strong>Authors:</strong> Duan, Z., Huang, Q., & Zhang, Q.</span>
-                                <span><strong>Journal:</strong> Building and Environment (2022)</span>
+                                <span><strong>Journal:</strong> Building and Environment (2022), 221, 109320</span>
                             </div>
-                            <span class="journal-badge">JCR Q1 • IF: 7.1</span>
+                            <div class="publication-links">
+                                <span class="journal-badge">JCR Q1 • IF: 7.1</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2022-building-environment-mass-timber-review.pdf" class="pdf-link" target="_blank">📄 PDF</a>
+                                <a href="https://doi.org/10.1016/j.buildenv.2022.109320" class="doi-link" target="_blank">🔗 DOI</a>
+                            </div>
+                            
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract ↓</button>
+                            <div class="publication-details">
+                                <div class="publication-abstract">
+                                    <h5>Abstract</h5>
+                                    <p>Life cycle assessment (LCA) has been widely used to determine the environmental impact of mass timber construction (MTC) as a substitute for conventional construction. This article presents a systematic review of MTC from a life cycle assessment perspective, examining 62 peer-reviewed articles.</p>
+                                    <p><strong>Key Findings:</strong> Mass timber buildings typically have lower global warming potential and embodied energy compared to conventional concrete and steel alternatives. Shows variety in scope, lifespan, system boundary, data sources and indicators across studies.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="publication fade-in">
+                            <h3>Impact of climate change on the life cycle greenhouse gas emissions of cross-laminated timber and reinforced concrete buildings in China</h3>
+                            <div class="publication-meta">
+                                <span><strong>Authors:</strong> Duan, Z.</span>
+                                <span><strong>Journal:</strong> Journal of Cleaner Production (2023), 395, 136446</span>
+                            </div>
+                            <div class="publication-links">
+                                <span class="journal-badge">JCR Q1 • IF: 9.7</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2023-journal-cleaner-production-clt-china.pdf" class="pdf-link" target="_blank">📄 PDF</a>
+                                <a href="#" class="doi-link" target="_blank">🔗 DOI</a>
+                            </div>
+                            
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract ↓</button>
+                            <div class="publication-details">
+                                <div class="publication-abstract">
+                                    <h5>Abstract</h5>
+                                    <p>This study investigates how climate change affects the life cycle greenhouse gas emissions of both cross-laminated timber (CLT) and reinforced concrete buildings in China's diverse climate zones.</p>
+                                    <p><strong>Key Contributions:</strong> First comprehensive assessment of climate change impacts on building LCA in China, demonstrating the importance of considering future climate scenarios in building material selection.</p>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="publication fade-in">
                             <h3>Comparative life cycle assessment of a reinforced concrete residential building with equivalent cross laminated timber alternatives in China</h3>
                             <div class="publication-meta">
                                 <span><strong>Authors:</strong> Duan, Z., Huang, Q., Sun, Q., & Zhang, Q.</span>
-                                <span><strong>Journal:</strong> Journal of Building Engineering (2022)</span>
+                                <span><strong>Journal:</strong> Journal of Building Engineering (2022), 62, 105357</span>
                             </div>
-                            <span class="journal-badge">JCR Q1 • IF: 6.7</span>
+                            <div class="publication-links">
+                                <span class="journal-badge">JCR Q1 • IF: 6.7</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2022-journal-building-engineering-clt-comparison.pdf" class="pdf-link" target="_blank">📄 PDF</a>
+                                <a href="https://doi.org/10.1016/j.jobe.2022.105357" class="doi-link" target="_blank">🔗 DOI</a>
+                            </div>
+                            
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract ↓</button>
+                            <div class="publication-details">
+                                <div class="publication-abstract">
+                                    <h5>Abstract</h5>
+                                    <p>This study explores the life cycle greenhouse gas emissions (LCGHGE) and life cycle primary energy (LCPE) of three high-rise residential buildings in the cold region of China: conventional reinforced concrete (RC), CLT and hybrid CLT buildings.</p>
+                                    <p><strong>Key Results:</strong> CLT and hybrid CLT buildings produce 15.00% and 10.77% lower LCGHGE respectively, with 46.52% and 37.24% of embodied GHG emissions reduced compared to RC building.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -938,6 +1112,18 @@
                     
                     <div class="skills-grid">
                         <div class="skill-card fade-in">
+                            <div class="skill-icon">👨‍🏫</div>
+                            <h4 class="skill-title">Teaching Assistant</h4>
+                            <p>Construction Management Technology, Digital Design and Construction: Coordination at University of Adelaide</p>
+                        </div>
+
+                        <div class="skill-card fade-in">
+                            <div class="skill-icon">📝</div>
+                            <h4 class="skill-title">Peer Reviewer</h4>
+                            <p>Nature Cities, Building and Environment, Communications Earth & Environment, Journal of Building Engineering, Intelligent Buildings International</p>
+                        </div>
+
+                        <div class="skill-card fade-in">
                             <div class="skill-icon">🏗️</div>
                             <h4 class="skill-title">3D Modeling & BIM</h4>
                             <p>AutoCAD, Revit, SketchUp, Rhinoceros, Grasshopper for parametric design and building information modeling</p>
@@ -956,21 +1142,9 @@
                         </div>
 
                         <div class="skill-card fade-in">
-                            <div class="skill-icon">🌍</div>
-                            <h4 class="skill-title">Languages</h4>
-                            <p>English (IELTS 7.0: L-8.5, R-7.0, W-6.0, S-6.0) • Chinese (Native proficiency)</p>
-                        </div>
-
-                        <div class="skill-card fade-in">
                             <div class="skill-icon">🔬</div>
                             <h4 class="skill-title">Research Methods</h4>
                             <p>Life cycle assessment, building performance simulation, systematic review methodologies</p>
-                        </div>
-
-                        <div class="skill-card fade-in">
-                            <div class="skill-icon">📝</div>
-                            <h4 class="skill-title">Academic Writing</h4>
-                            <p>Peer reviewer for top-tier journals in sustainable architecture and building technology</p>
                         </div>
                     </div>
                 </div>
@@ -988,6 +1162,24 @@
                     </div>
                     
                     <div class="awards-grid">
+                        <div class="award-card fade-in">
+                            <div class="award-year">2025</div>
+                            <h4 class="award-title">Ian Wilson Liberal Foundation Research Supplementary Scholarship</h4>
+                            <p class="award-description">$10,000 per annum (tax-free) supplementary scholarship supporting PhD research in sustainable building technologies (2025-2027)</p>
+                        </div>
+
+                        <div class="award-card fade-in">
+                            <div class="award-year">2025</div>
+                            <h4 class="award-title">Hans-Jürgen and Marianne Ohff Research Grant</h4>
+                            <p class="award-description">$6,900 research travel grant for collaboration at University of Liège, Belgium - Sustainable Building Design Lab (Oct 2025 - Apr 2026)</p>
+                        </div>
+
+                        <div class="award-card fade-in">
+                            <div class="award-year">2025</div>
+                            <h4 class="award-title">Terence Williamson Prize in Architectural Research</h4>
+                            <p class="award-description">$500 prize recognizing outstanding achievement in architectural research - School of Architecture and Civil Engineering</p>
+                        </div>
+
                         <div class="award-card fade-in">
                             <div class="award-year">2025</div>
                             <h4 class="award-title">CLIVE E. BOYCE Research Scholarship in Architecture</h4>
@@ -1057,10 +1249,11 @@
 
                         <div class="contact-card fade-in">
                             <div class="contact-icon">🎓</div>
-                            <h3 class="contact-title">Academic Profile</h3>
+                            <h3 class="contact-title">Academic Profiles</h3>
                             <div class="contact-info">
-                                <a href="#" target="_blank">Google Scholar</a><br>
-                                Research Gate Profile
+                                <a href="https://scholar.google.com/citations?user=rc3LnJgAAAAJ&hl=en" target="_blank">Google Scholar</a><br>
+                                <a href="https://www.researchgate.net/profile/Zhuocheng_Duan?ev=hdr_xprf" target="_blank">ResearchGate</a><br>
+                                <a href="https://www.linkedin.com/in/zhuocheng-duan-6b1a27217/" target="_blank">LinkedIn</a>
                             </div>
                         </div>
 
@@ -1167,6 +1360,23 @@
             nav.style.bottom = '20px';
             nav.style.top = 'auto';
         }
+
+        // Toggle publication details
+        function toggleDetails(button) {
+            const details = button.nextElementSibling;
+            const isExpanded = details.classList.contains('expanded');
+            
+            if (isExpanded) {
+                details.classList.remove('expanded');
+                button.textContent = 'Show Abstract ↓';
+            } else {
+                details.classList.add('expanded');
+                button.textContent = 'Hide Abstract ↑';
+            }
+        }
+
+        // Make toggleDetails function globally accessible
+        window.toggleDetails = toggleDetails;
     </script>
 </body>
 </html>
