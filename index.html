@@ -634,9 +634,86 @@
             font-size: 0.95rem;
         }
 
+        /* Photography Section */
+        .photography-section {
+            background: var(--surface-light);
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .photo-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .photo-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="camera" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23camera)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .photo-placeholder .camera-icon {
+            font-size: 3rem;
+            opacity: 0.7;
+            position: relative;
+            z-index: 2;
+        }
+
+        .photo-info {
+            padding: 20px;
+        }
+
+        .photo-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .photo-description {
+            color: var(--accent-gray);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
         /* Contact Section */
         .contact-section {
-            background: var(--primary-dark);
+            background: var(--gradient-dark);
             color: var(--primary-light);
         }
 
@@ -648,18 +725,24 @@
         }
 
         .contact-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(15px);
             padding: 40px 30px;
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .contact-card:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.7);
             transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border-color: rgba(212, 175, 55, 0.3);
         }
 
         .contact-icon {
@@ -672,12 +755,14 @@
             font-family: 'Playfair Display', serif;
             font-size: 1.3rem;
             margin-bottom: 15px;
-            color: var(--primary-light);
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .contact-info {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.9);
             line-height: 1.6;
+            text-align: center;
+            width: 100%;
         }
 
         .contact-info a {
@@ -744,6 +829,11 @@
             .section {
                 padding: 80px 0;
             }
+
+            .photo-gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
         }
 
         /* Scroll animations */
@@ -773,6 +863,7 @@
                 <li><a href="#research" class="nav-link">Research</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#awards" class="nav-link">Awards</a></li>
+                <li><a href="#photography" class="nav-link">Photography</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
@@ -893,7 +984,7 @@
                             <div class="publication-links">
                                 <span class="journal-badge">JCR Q1 • IF: 10.1</span>
                                 <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2025-applied-energy-climate-simulation.pdf" class="pdf-link" target="_blank">📄 PDF</a>
-                                <a href="#" class="doi-link" target="_blank">🔗 DOI</a>
+                                <a href="https://doi.org/10.1016/j.apenergy.2025.125331" class="doi-link" target="_blank">🔗 DOI</a>
                             </div>
                             
                             <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract ↓</button>
@@ -915,7 +1006,7 @@
                             <div class="publication-links">
                                 <span class="journal-badge">JCR Q1 • IF: 6.6</span>
                                 <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2024-energy-buildings-ecm-review.pdf" class="pdf-link" target="_blank">📄 PDF</a>
-                                <a href="#" class="doi-link" target="_blank">🔗 DOI</a>
+                                <a href="https://doi.org/10.1016/j.enbuild.2024.114739" class="doi-link" target="_blank">🔗 DOI</a>
                             </div>
                             
                             <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract ↓</button>
@@ -959,7 +1050,7 @@
                             <div class="publication-links">
                                 <span class="journal-badge">JCR Q1 • IF: 9.7</span>
                                 <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2023-journal-cleaner-production-clt-china.pdf" class="pdf-link" target="_blank">📄 PDF</a>
-                                <a href="#" class="doi-link" target="_blank">🔗 DOI</a>
+                                <a href="https://doi.org/10.1016/j.jclepro.2023.136446" class="doi-link" target="_blank">🔗 DOI</a>
                             </div>
                             
                             <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract ↓</button>
@@ -990,6 +1081,50 @@
                                     <h5>Abstract</h5>
                                     <p>This study explores the life cycle greenhouse gas emissions (LCGHGE) and life cycle primary energy (LCPE) of three high-rise residential buildings in the cold region of China: conventional reinforced concrete (RC), CLT and hybrid CLT buildings.</p>
                                     <p><strong>Key Results:</strong> CLT and hybrid CLT buildings produce 15.00% and 10.77% lower LCGHGE respectively, with 46.52% and 37.24% of embodied GHG emissions reduced compared to RC building.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="publication fade-in">
+                            <h3>Recycling potential comparison of mass timber constructions and concrete buildings: A case study in China</h3>
+                            <div class="publication-meta">
+                                <span><strong>Authors:</strong> Sun, Q., Huang, Q., <strong>Duan, Z.</strong>, & Zhang, A.</span>
+                                <span><strong>Journal:</strong> Sustainability (2022), 14(10), 6174</span>
+                            </div>
+                            <div class="publication-links">
+                                <span class="journal-badge">JCR Q2 • IF: 3.3</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/sun2022-sustainability-mass-timber-recycling.pdf" class="pdf-link" target="_blank">📄 PDF</a>
+                                <a href="https://doi.org/10.3390/su14106174" class="doi-link" target="_blank">🔗 DOI</a>
+                            </div>
+                            
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract ↓</button>
+                            <div class="publication-details">
+                                <div class="publication-abstract">
+                                    <h5>Abstract</h5>
+                                    <p>This study compares the recycling potential of mass timber constructions with concrete buildings through a comprehensive case study in China. The research evaluates end-of-life scenarios and circular economy potential of different building materials.</p>
+                                    <p><strong>Key Contributions:</strong> Demonstrates superior recycling potential of mass timber compared to concrete buildings, supporting circular economy principles in the construction industry.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="publication fade-in">
+                            <h3>Research on post occupancy evaluation of Oze National Park in Japan based on online reviews</h3>
+                            <div class="publication-meta">
+                                <span><strong>Authors:</strong> Tang, S., <strong>Duan, Z.</strong>, Chen, W., & Qiao, H.</span>
+                                <span><strong>Journal:</strong> Journal of Asian Architecture and Building Engineering (2022), 1-18</span>
+                            </div>
+                            <div class="publication-links">
+                                <span class="journal-badge">JCR Q4 • IF: 1.5 • Corresponding Author</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/tang2023-jaabe-oze-national-park.pdf" class="pdf-link" target="_blank">📄 PDF</a>
+                                <a href="https://doi.org/10.1080/13467581.2022.2047981" class="doi-link" target="_blank">🔗 DOI</a>
+                            </div>
+                            
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract ↓</button>
+                            <div class="publication-details">
+                                <div class="publication-abstract">
+                                    <h5>Abstract</h5>
+                                    <p>This research explores post-occupancy evaluation methodologies applied to Oze National Park in Japan using online reviews as a data source. The study employs content analysis, semantic analysis, and topic analysis through Python programming.</p>
+                                    <p><strong>Key Methodology:</strong> Innovative use of online review data for post-occupancy evaluation, demonstrating the potential of digital data sources for understanding user experiences in architectural and landscape spaces.</p>
                                 </div>
                             </div>
                         </div>
@@ -1219,13 +1354,58 @@
                 </div>
             </section>
 
+            <!-- Photography Section -->
+            <section id="photography" class="section photography-section">
+                <div class="section-container">
+                    <div class="section-header fade-in">
+                        <p class="section-number">07</p>
+                        <h2 class="section-title">Photography</h2>
+                        <p class="section-subtitle">
+                            Capturing architectural beauty and environmental moments through my lens
+                        </p>
+                    </div>
+                    
+                    <div class="photo-gallery">
+                        <div class="photo-card fade-in">
+                            <div class="photo-placeholder">
+                                <div class="camera-icon">🏗️</div>
+                            </div>
+                            <div class="photo-info">
+                                <h4 class="photo-title">Architecture</h4>
+                                <p class="photo-description">Exploring the intersection of light, shadow, and sustainable design in modern buildings and urban spaces</p>
+                            </div>
+                        </div>
+
+                        <div class="photo-card fade-in">
+                            <div class="photo-placeholder">
+                                <div class="camera-icon">👥</div>
+                            </div>
+                            <div class="photo-info">
+                                <h4 class="photo-title">Human</h4>
+                                <p class="photo-description">Documenting people in architectural spaces, research collaborations, and the human experience within built environments</p>
+                            </div>
+                        </div>
+
+                        <div class="photo-card fade-in">
+                            <div class="photo-placeholder">
+                                <div class="camera-icon">🌿</div>
+                            </div>
+                            <div class="photo-info">
+                                <h4 class="photo-title">Nature</h4>
+                                <p class="photo-description">Capturing natural landscapes, environmental elements, and the beauty of sustainable materials in their native settings</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Contact Section -->
             <section id="contact" class="section contact-section">
                 <div class="section-container">
                     <div class="section-header fade-in">
-                        <p class="section-number" style="color: var(--accent-gold);">07</p>
+                        <p class="section-number" style="color: var(--accent-gold);">08</p>
                         <h2 class="section-title" style="color: var(--primary-light);">Contact</h2>
-                        <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.8);">
+                        <p class="section-subtitle">
                             Let's collaborate on sustainable building research and innovation
                         </p>
                     </div>
@@ -1240,30 +1420,31 @@
                         </div>
 
                         <div class="contact-card fade-in">
-                            <div class="contact-icon">📱</div>
-                            <h3 class="contact-title">Phone</h3>
-                            <div class="contact-info">
-                                <a href="tel:+610410615608">+61 041 061 5608</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-card fade-in">
                             <div class="contact-icon">🎓</div>
                             <h3 class="contact-title">Academic Profiles</h3>
                             <div class="contact-info">
                                 <a href="https://scholar.google.com/citations?user=rc3LnJgAAAAJ&hl=en" target="_blank">Google Scholar</a><br>
-                                <a href="https://www.researchgate.net/profile/Zhuocheng_Duan?ev=hdr_xprf" target="_blank">ResearchGate</a><br>
-                                <a href="https://www.linkedin.com/in/zhuocheng-duan-6b1a27217/" target="_blank">LinkedIn</a>
+                                <a href="https://www.researchgate.net/profile/Zhuocheng_Duan?ev=hdr_xprf" target="_blank">ResearchGate</a>
                             </div>
                         </div>
 
                         <div class="contact-card fade-in">
                             <div class="contact-icon">🏛️</div>
-                            <h3 class="contact-title">Institution</h3>
+                            <h3 class="contact-title">University Profile</h3>
                             <div class="contact-info">
-                                School of Architecture and Civil Engineering<br>
-                                University of Adelaide<br>
+                                <a href="https://researchers.adelaide.edu.au/profile/zhuocheng.duan" target="_blank">University of Adelaide</a><br>
+                                School of Architecture and<br>
+                                Civil Engineering<br>
                                 Adelaide, South Australia
+                            </div>
+                        </div>
+
+                        <div class="contact-card fade-in">
+                            <div class="contact-icon">💼</div>
+                            <h3 class="contact-title">Professional Network</h3>
+                            <div class="contact-info">
+                                <a href="https://www.linkedin.com/in/zhuocheng-duan-6b1a27217/" target="_blank">LinkedIn Profile</a><br>
+                                Connect for collaboration opportunities
                             </div>
                         </div>
                     </div>
@@ -1359,6 +1540,11 @@
             nav.style.position = 'fixed';
             nav.style.bottom = '20px';
             nav.style.top = 'auto';
+        }
+
+        // Photo gallery note
+        function showUploadInstructions() {
+            alert('To add your photos:\n1. Create an "images" folder in your GitHub repository\n2. Upload your photos (400x250px recommended)\n3. Replace photo-placeholder divs with <img src="github-url-to-image"> tags\n4. Update photo titles and descriptions as needed');
         }
 
         // Toggle publication details
