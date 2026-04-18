@@ -434,6 +434,12 @@
             align-items: center;
         }
 
+        .profile-links {
+            justify-content: center;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
         .pdf-link {
             background: var(--gradient-dark);
             color: white;
@@ -687,7 +693,7 @@
         }
 
         .photo-item::after {
-            content: '🔍';
+            content: 'ðŸ”';
             position: absolute;
             top: 50%;
             left: 50%;
@@ -918,7 +924,6 @@
                 gap: 20px;
             }
         }
-
         /* Scroll animations */
         .fade-in {
             opacity: 0;
@@ -961,7 +966,7 @@
                 </p>
                 <a href="#about" class="cta-button">
                     Explore My Research
-                    <span>↓</span>
+                    <span>â†“</span>
                 </a>
             </div>
         </section>
@@ -1033,9 +1038,35 @@
                         <p class="section-subtitle">
                             Contributing to the global knowledge base on sustainable building design and climate adaptation
                         </p>
+                        <div class="publication-links profile-links">
+                            <a href="https://scholar.google.com/citations?user=rc3LnJgAAAAJ&hl=en" class="doi-link" target="_blank">Google Scholar</a>
+                            <a href="https://www.researchgate.net/profile/Zhuocheng_Duan?ev=hdr_xprf" class="doi-link" target="_blank">ResearchGate</a>
+                        </div>
                     </div>
                     
-                    <div class="publications-grid">					
+                    <div class="publications-grid">
+                        <div class="publication fade-in">
+                            <h3>Embodied versus operational emissions: A life cycle optimization framework for building envelope design under climate change</h3>
+                            <div class="publication-meta">
+                                <span>Authors: <strong>Duan, Z.</strong>, Omrany, H., & Zuo, J.</span>
+                                <span>Journal: <strong>Building and Environment</strong> (2026), 297, 114598</span>
+                            </div>
+                            <div class="publication-links">
+                                <span class="journal-badge">JCR Q1 â€¢ IF: 7.6</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2026-Embodied-versus-operational-emissions.pdf" class="pdf-link" target="_blank">ðŸ“„ PDF</a>
+                                <a href="https://doi.org/10.1016/j.buildenv.2026.114598" class="doi-link" target="_blank">ðŸ”— DOI</a>
+                            </div>
+
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract â†“</button>
+                            <div class="publication-details">
+                                <div class="publication-abstract">
+                                    <h5>Abstract</h5>
+                                    <p>This study develops an integrated life cycle assessment framework to examine the trade-off between embodied and operational emissions in building envelope design under climate change. The framework evaluates four scenarios that combine static and dynamic climate and energy conditions for a 10-storey mass timber office building across Australian cities.</p>
+                                    <p><strong>Key Findings:</strong> The results show strong spatial variation in minimum life cycle greenhouse gas emissions, ranging from 1426 kgCO2eq/mÂ² in Hobart to 8322 kgCO2eq/mÂ² in Townsville. Climate change and grid decarbonization interact in non-linear ways, and reducing operational energy beyond the optimum can increase total life cycle emissions. The framework provides quantitative evidence for more durable low-carbon envelope design decisions.</p>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="publication fade-in">
                             <h3>Exploring embodied greenhouse gas (GHG) emissions of mass timber construction: A comparative study of life cycle assessment databases</h3>
                             <div class="publication-meta">
@@ -1043,17 +1074,17 @@
                                 <span>Journal: <strong>Resources, Conservation & Recycling</strong> (2025), 223, 108491</span>
                             </div>
                             <div class="publication-links">
-                                <span class="journal-badge">JCR Q1 • IF: 10.9</span>
-                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2025-resources-conservation-recycling-embodied-carbon.pdf" class="pdf-link" target="_blank">📄 PDF</a>
-                                <a href="https://doi.org/10.1016/j.resconrec.2025.108491" class="doi-link" target="_blank">🔗 DOI</a>
+                                <span class="journal-badge">JCR Q1 â€¢ IF: 10.9</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2025-resources-conservation-recycling-embodied-carbon.pdf" class="pdf-link" target="_blank">ðŸ“„ PDF</a>
+                                <a href="https://doi.org/10.1016/j.resconrec.2025.108491" class="doi-link" target="_blank">ðŸ”— DOI</a>
                             </div>
                             
-                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract ↓</button>
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract â†“</button>
                             <div class="publication-details">
                                 <div class="publication-abstract">
                                     <h5>Abstract</h5>
                                     <p>With global efforts in reducing building operational energy consumption, attention is increasingly turning toward mitigating embodied greenhouse gas (GHG) emissions from building materials manufacturing and processing, particularly for emerging materials like mass timber. Quantifying embodied emissions typically requires the use of GHG emission coefficients from life cycle assessment (LCA) databases. However, significant variability persists in the results of LCA studies while their underlying causes remain largely unexplored.</p>
-                                    <p><strong>Key Findings:</strong> Through detailed examination at material and building levels, the research reveals significant methodological inconsistencies that create substantial variations in embodied emissions. At the material level, mass timber emissions span from -686.80 to 1718.00 kgCO2eq/m³. Building-level analysis (A1-A3) reveals emission ranges of -170.31 to 434.62 kgCO2eq/m² for mass timber construction and 69.79 to 485.95 kgCO2eq/m² for concrete buildings.</p>
+                                    <p><strong>Key Findings:</strong> Through detailed examination at material and building levels, the research reveals significant methodological inconsistencies that create substantial variations in embodied emissions. At the material level, mass timber emissions span from -686.80 to 1718.00 kgCO2eq/mÂ³. Building-level analysis (A1-A3) reveals emission ranges of -170.31 to 434.62 kgCO2eq/mÂ² for mass timber construction and 69.79 to 485.95 kgCO2eq/mÂ² for concrete buildings.</p>
                                     <p><strong>Implications:</strong> The study identifies several challenges in current mass timber LCAs, including inconsistent treatment of biogenic carbon flow, varying system boundary definitions, and inadequate consideration of End-of-Life (EoL) processes for mass timber. This highlights the need for establishing standardized approaches for biogenic carbon accounting and developing more comprehensive and transparent databases to enhance the reliability of mass timber LCA.</p>
                                 </div>
                             </div>
@@ -1066,12 +1097,12 @@
                                 <span>Journal: <strong>Energy</strong> (2025), 319, 134956</span>
                             </div>
                             <div class="publication-links">
-                                <span class="journal-badge">JCR Q1 • IF: 9.4</span>
-                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2025-energy-australia-office-buildings.pdf" class="pdf-link" target="_blank">📄 PDF</a>
-                                <a href="https://doi.org/10.1016/j.energy.2025.134956" class="doi-link" target="_blank">🔗 DOI</a>
+                                <span class="journal-badge">JCR Q1 â€¢ IF: 9.4</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2025-energy-australia-office-buildings.pdf" class="pdf-link" target="_blank">ðŸ“„ PDF</a>
+                                <a href="https://doi.org/10.1016/j.energy.2025.134956" class="doi-link" target="_blank">ðŸ”— DOI</a>
                             </div>
                             
-                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract ↓</button>
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract â†“</button>
                             <div class="publication-details">
                                 <div class="publication-abstract">
                                     <h5>Abstract</h5>
@@ -1088,12 +1119,12 @@
                                 <span>Journal: <strong>Applied Energy</strong> (2025), 382, 125331</span>
                             </div>
                             <div class="publication-links">
-                                <span class="journal-badge">JCR Q1 • IF: 11.0</span>
-                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2025-applied-energy-climate-simulation.pdf" class="pdf-link" target="_blank">📄 PDF</a>
-                                <a href="https://doi.org/10.1016/j.apenergy.2025.125331" class="doi-link" target="_blank">🔗 DOI</a>
+                                <span class="journal-badge">JCR Q1 â€¢ IF: 11.0</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2025-applied-energy-climate-simulation.pdf" class="pdf-link" target="_blank">ðŸ“„ PDF</a>
+                                <a href="https://doi.org/10.1016/j.apenergy.2025.125331" class="doi-link" target="_blank">ðŸ”— DOI</a>
                             </div>
                             
-                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract ↓</button>
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract â†“</button>
                             <div class="publication-details">
                                 <div class="publication-abstract">
                                     <h5>Abstract</h5>
@@ -1110,12 +1141,12 @@
                                 <span>Journal: <strong>Energy and Buildings</strong> (2024), 322, 114739</span>
                             </div>
                             <div class="publication-links">
-                                <span class="journal-badge">JCR Q1 • IF: 7.1</span>
-                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2024-energy-buildings-ecm-review.pdf" class="pdf-link" target="_blank">📄 PDF</a>
-                                <a href="https://doi.org/10.1016/j.enbuild.2024.114739" class="doi-link" target="_blank">🔗 DOI</a>
+                                <span class="journal-badge">JCR Q1 â€¢ IF: 7.1</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2024-energy-buildings-ecm-review.pdf" class="pdf-link" target="_blank">ðŸ“„ PDF</a>
+                                <a href="https://doi.org/10.1016/j.enbuild.2024.114739" class="doi-link" target="_blank">ðŸ”— DOI</a>
                             </div>
                             
-                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract ↓</button>
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract â†“</button>
                             <div class="publication-details">
                                 <div class="publication-abstract">
                                     <h5>Abstract</h5>
@@ -1132,12 +1163,12 @@
                                 <span>Journal: <strong>Journal of Cleaner Production</strong> (2023), 395, 136446</span>
                             </div>
                             <div class="publication-links">
-                                <span class="journal-badge">JCR Q1 • IF: 10.0</span>
-                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2023-journal-cleaner-production-clt-china.pdf" class="pdf-link" target="_blank">📄 PDF</a>
-                                <a href="https://doi.org/10.1016/j.jclepro.2023.136446" class="doi-link" target="_blank">🔗 DOI</a>
+                                <span class="journal-badge">JCR Q1 â€¢ IF: 10.0</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2023-journal-cleaner-production-clt-china.pdf" class="pdf-link" target="_blank">ðŸ“„ PDF</a>
+                                <a href="https://doi.org/10.1016/j.jclepro.2023.136446" class="doi-link" target="_blank">ðŸ”— DOI</a>
                             </div>
                             
-                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract ↓</button>
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract â†“</button>
                             <div class="publication-details">
                                 <div class="publication-abstract">
                                     <h5>Abstract</h5>
@@ -1154,12 +1185,12 @@
                                 <span>Journal: <strong>Building and Environment</strong> (2022), 221, 109320</span>
                             </div>
                             <div class="publication-links">
-                                <span class="journal-badge">JCR Q1 • IF: 7.6</span>
-                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2022-building-environment-mass-timber-review.pdf" class="pdf-link" target="_blank">📄 PDF</a>
-                                <a href="https://doi.org/10.1016/j.buildenv.2022.109320" class="doi-link" target="_blank">🔗 DOI</a>
+                                <span class="journal-badge">JCR Q1 â€¢ IF: 7.6</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2022-building-environment-mass-timber-review.pdf" class="pdf-link" target="_blank">ðŸ“„ PDF</a>
+                                <a href="https://doi.org/10.1016/j.buildenv.2022.109320" class="doi-link" target="_blank">ðŸ”— DOI</a>
                             </div>
                             
-                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract ↓</button>
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract â†“</button>
                             <div class="publication-details">
                                 <div class="publication-abstract">
                                     <h5>Abstract</h5>
@@ -1176,12 +1207,12 @@
                                 <span>Journal: <strong>Journal of Building Engineering</strong> (2022), 62, 105357</span>
                             </div>
                             <div class="publication-links">
-                                <span class="journal-badge">JCR Q1 • IF: 7.4</span>
-                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2022-journal-building-engineering-clt-comparison.pdf" class="pdf-link" target="_blank">📄 PDF</a>
-                                <a href="https://doi.org/10.1016/j.jobe.2022.105357" class="doi-link" target="_blank">🔗 DOI</a>
+                                <span class="journal-badge">JCR Q1 â€¢ IF: 7.4</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2022-journal-building-engineering-clt-comparison.pdf" class="pdf-link" target="_blank">ðŸ“„ PDF</a>
+                                <a href="https://doi.org/10.1016/j.jobe.2022.105357" class="doi-link" target="_blank">ðŸ”— DOI</a>
                             </div>
                             
-                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract ↓</button>
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract â†“</button>
                             <div class="publication-details">
                                 <div class="publication-abstract">
                                     <h5>Abstract</h5>
@@ -1198,12 +1229,12 @@
                                 <span>Journal: <strong>Sustainability</strong> (2022), 14(10), 6174</span>
                             </div>
                             <div class="publication-links">
-                                <span class="journal-badge">JCR Q2 • IF: 3.3</span>
-                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/sun2022-sustainability-mass-timber-recycling.pdf" class="pdf-link" target="_blank">📄 PDF</a>
-                                <a href="https://doi.org/10.3390/su14106174" class="doi-link" target="_blank">🔗 DOI</a>
+                                <span class="journal-badge">JCR Q2 â€¢ IF: 3.3</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/sun2022-sustainability-mass-timber-recycling.pdf" class="pdf-link" target="_blank">ðŸ“„ PDF</a>
+                                <a href="https://doi.org/10.3390/su14106174" class="doi-link" target="_blank">ðŸ”— DOI</a>
                             </div>
                             
-                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract ↓</button>
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract â†“</button>
                             <div class="publication-details">
                                 <div class="publication-abstract">
                                     <h5>Abstract</h5>
@@ -1220,12 +1251,12 @@
                                 <span>Journal: <strong>Journal of Asian Architecture and Building Engineering</strong> (2022), 1-18</span>
                             </div>
                             <div class="publication-links">
-                                <span class="journal-badge">JCR Q4 • IF: 1.6 • Corresponding Author</span>
-                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/tang2023-jaabe-oze-national-park.pdf" class="pdf-link" target="_blank">📄 PDF</a>
-                                <a href="https://doi.org/10.1080/13467581.2022.2047981" class="doi-link" target="_blank">🔗 DOI</a>
+                                <span class="journal-badge">JCR Q4 â€¢ IF: 1.6 â€¢ Corresponding Author</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/tang2023-jaabe-oze-national-park.pdf" class="pdf-link" target="_blank">ðŸ“„ PDF</a>
+                                <a href="https://doi.org/10.1080/13467581.2022.2047981" class="doi-link" target="_blank">ðŸ”— DOI</a>
                             </div>
                             
-                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract ↓</button>
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract â†“</button>
                             <div class="publication-details">
                                 <div class="publication-abstract">
                                     <h5>Abstract</h5>
@@ -1302,7 +1333,7 @@
                             <div class="timeline-content">
                                 <div class="timeline-date">2024 - Present</div>
                                 <h3 class="timeline-title">IEA EBC Annex 89: Implementing Net-Zero Whole Life Carbon Buildings</h3>
-                                <div class="timeline-institution">University of Adelaide • Research Collaborator</div>
+                                <div class="timeline-institution">University of Adelaide â€¢ Research Collaborator</div>
                                 <p><strong>Supervisor:</strong> Prof. Jian Zuo</p>
                                 <p>Active participation in international collaboration focused on achieving net-zero carbon emissions in the built environment. Contributing to global research strategies and methodological frameworks for whole life carbon assessment.</p>
                             </div>
@@ -1313,7 +1344,7 @@
                             <div class="timeline-content">
                                 <div class="timeline-date">2020 - 2023</div>
                                 <h3 class="timeline-title">National Key Research and Development Program of China</h3>
-                                <div class="timeline-institution">Tianjin University • Lead Researcher</div>
+                                <div class="timeline-institution">Tianjin University â€¢ Lead Researcher</div>
                                 <p><strong>Project:</strong> Goal and effect-oriented green building design principles and methodologies</p>
                                 <p><strong>Supervisor:</strong> Prof. Qiong Huang</p>
                                 <ul>
@@ -1329,7 +1360,7 @@
                             <div class="timeline-content">
                                 <div class="timeline-date">2018 - 2019</div>
                                 <h3 class="timeline-title">Campus Space Activation Research</h3>
-                                <div class="timeline-institution">Wuhan University of Technology • Research Assistant</div>
+                                <div class="timeline-institution">Wuhan University of Technology â€¢ Research Assistant</div>
                                 <p><strong>Project:</strong> Study on the activation of negative space in university campus from the perspective of space acupuncture</p>
                                 <p><strong>Supervisor:</strong> Prof. Yi Zhang</p>
                                 <p>Developed innovative approaches to campus space optimization through comprehensive field studies and user behavior analysis across multiple university campuses in China.</p>
@@ -1352,37 +1383,37 @@
                     
                     <div class="skills-grid">
                         <div class="skill-card fade-in">
-                            <div class="skill-icon">👨‍🏫</div>
+                            <div class="skill-icon">ðŸ‘¨â€ðŸ«</div>
                             <h4 class="skill-title">Teaching Assistant</h4>
                             <p>Construction Management Technology, Digital Design and Construction: Coordination at University of Adelaide</p>
                         </div>
 
                         <div class="skill-card fade-in">
-                            <div class="skill-icon">📝</div>
+                            <div class="skill-icon">ðŸ“</div>
                             <h4 class="skill-title">Peer Reviewer</h4>
                             <p>Nature Cities, Building and Environment, Communications Earth & Environment, Journal of Building Engineering, Intelligent Buildings International</p>
                         </div>
 
                         <div class="skill-card fade-in">
-                            <div class="skill-icon">🏗️</div>
+                            <div class="skill-icon">ðŸ—ï¸</div>
                             <h4 class="skill-title">3D Modeling & BIM</h4>
                             <p>AutoCAD, Revit, SketchUp, Rhinoceros, Grasshopper for parametric design and building information modeling</p>
                         </div>
 
                         <div class="skill-card fade-in">
-                            <div class="skill-icon">🎨</div>
+                            <div class="skill-icon">ðŸŽ¨</div>
                             <h4 class="skill-title">Design Visualization</h4>
                             <p>Photoshop, Illustrator, InDesign for professional presentation and architectural visualization</p>
                         </div>
 
                         <div class="skill-card fade-in">
-                            <div class="skill-icon">📊</div>
+                            <div class="skill-icon">ðŸ“Š</div>
                             <h4 class="skill-title">Data Analysis</h4>
                             <p>Python programming for content analysis, semantic analysis, and environmental data processing</p>
                         </div>
 
                         <div class="skill-card fade-in">
-                            <div class="skill-icon">🔬</div>
+                            <div class="skill-icon">ðŸ”¬</div>
                             <h4 class="skill-title">Research Methods</h4>
                             <p>Life cycle assessment, building performance simulation, systematic review methodologies</p>
                         </div>
@@ -1410,8 +1441,8 @@
 
                         <div class="award-card fade-in">
                             <div class="award-year">2025</div>
-                            <h4 class="award-title">Hans-Jürgen and Marianne Ohff Research Grant</h4>
-                            <p class="award-description">Research travel grant for collaboration at University of Liège, Belgium - Sustainable Building Design Lab (Oct 2025 - Apr 2026)</p>
+                            <h4 class="award-title">Hans-JÃ¼rgen and Marianne Ohff Research Grant</h4>
+                            <p class="award-description">Research travel grant for collaboration at University of LiÃ¨ge, Belgium - Sustainable Building Design Lab (Oct 2025 - Apr 2026)</p>
                         </div>
 
                         <div class="award-card fade-in">
@@ -1470,80 +1501,27 @@
                         </p>
                     </div>
                     
-                    <!-- Architecture Gallery -->
                     <div class="photo-category fade-in">
-                        <h3 class="category-title">🏗️ Architecture</h3>
-                        <p class="category-description">Exploring the intersection of light, shadow, and design in modern buildings and urban spaces</p>
+                        <h3 class="category-title">Selected Works</h3>
+                        <p class="category-description">A compact selection: 2 architecture, 2 people, and 2 nature photos.</p>
                         <div class="photo-grid">
                             <div class="photo-item">
-                                <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/Arch%201.jpg" alt="Architectural Photography 1" loading="lazy">
+                                <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/Arch%201.jpg" alt="Architecture Photo 1" loading="lazy">
                             </div>
                             <div class="photo-item">
-                                <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/Arch%202.jpg" alt="Architectural Photography 2" loading="lazy">
+                                <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/Arch%202.jpg" alt="Architecture Photo 2" loading="lazy">
                             </div>
                             <div class="photo-item">
-                                <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/Arch%203.jpg" alt="Architectural Photography 3" loading="lazy">
+                                <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/People%201.jpg" alt="People Photo 1" loading="lazy">
                             </div>
                             <div class="photo-item">
-                                <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/Arch%204.jpg" alt="Architectural Photography 4" loading="lazy">
+                                <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/People%202.jpg" alt="People Photo 2" loading="lazy">
                             </div>
                             <div class="photo-item">
-                                <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/Arch%205.jpg" alt="Architectural Photography 5" loading="lazy">
+                                <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/Nature%201.jpg" alt="Nature Photo 1" loading="lazy">
                             </div>
                             <div class="photo-item">
-                                <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/Arch%206.jpg" alt="Architectural Photography 6" loading="lazy">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- People Gallery -->
-                    <div class="photo-category fade-in">
-                        <h3 class="category-title">👥 People</h3>
-                        <p class="category-description">Documenting people in architectural spaces and natural environments</p>
-                        <div class="photo-grid">
-                            <div class="photo-item">
-                                <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/People%201.jpg" alt="People Photography 1" loading="lazy">
-                            </div>
-                            <div class="photo-item">
-                                <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/People%202.jpg" alt="People Photography 2" loading="lazy">
-                            </div>
-                            <div class="photo-item">
-                                <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/People%203.jpg" alt="People Photography 3" loading="lazy">
-                            </div>
-                            <div class="photo-item">
-                                <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/People%204.jpg" alt="People Photography 4" loading="lazy">
-                            </div>
-                            <div class="photo-item">
-                                <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/People%205.jpg" alt="People Photography 5" loading="lazy">
-                            </div>
-                            <div class="photo-item">
-                                <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/People%206.jpg" alt="People Photography 6" loading="lazy">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Nature Gallery -->
-                    <div class="photo-category fade-in">
-                        <h3 class="category-title">🌿 Nature</h3>
-                        <p class="category-description">Capturing natural landscapes, environmental elements, and the beauty of buildings</p>
-                        <div class="photo-grid">
-                            <div class="photo-item">
-                                <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/Nature%201.jpg" alt="Nature Photography 1" loading="lazy">
-                            </div>
-                            <div class="photo-item">
-                                <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/Nature%202.jpg" alt="Nature Photography 2" loading="lazy">
-                            </div>
-                            <div class="photo-item">
-                                <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/Nature%203.jpg" alt="Nature Photography 3" loading="lazy">
-                            </div>
-                            <div class="photo-item">
-                                <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/Nature%204.jpg" alt="Nature Photography 4" loading="lazy">
-                            </div>
-                            <div class="photo-item">
-                                <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/Nature%205.jpg" alt="Nature Photography 5" loading="lazy">
-                            </div>
-                            <div class="photo-item">
-                                <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/Nature%206.jpg" alt="Nature Photography 6" loading="lazy">
+                                <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/Nature%202.jpg" alt="Nature Photo 2" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -1563,7 +1541,7 @@
                     
                     <div class="contact-grid">
                         <div class="contact-card fade-in">
-                            <div class="contact-icon">📧</div>
+                            <div class="contact-icon">ðŸ“§</div>
                             <h3 class="contact-title">Email</h3>
                             <div class="contact-info">
                                 <a href="mailto:zhuocheng.duan@adelaide.edu.au">zhuocheng.duan@adelaide.edu.au</a>
@@ -1571,16 +1549,7 @@
                         </div>
 
                         <div class="contact-card fade-in">
-                            <div class="contact-icon">🎓</div>
-                            <h3 class="contact-title">Academic Profiles</h3>
-                            <div class="contact-info">
-                                <a href="https://scholar.google.com/citations?user=rc3LnJgAAAAJ&hl=en" target="_blank">Google Scholar</a><br>
-                                <a href="https://www.researchgate.net/profile/Zhuocheng_Duan?ev=hdr_xprf" target="_blank">ResearchGate</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-card fade-in">
-                            <div class="contact-icon">🏛️</div>
+                            <div class="contact-icon">ðŸ›ï¸</div>
                             <h3 class="contact-title">University Profile</h3>
                             <div class="contact-info">
                                 <a href="https://researchers.adelaide.edu.au/profile/zhuocheng.duan" target="_blank">University of Adelaide</a><br>
@@ -1591,7 +1560,7 @@
                         </div>
 
                         <div class="contact-card fade-in">
-                            <div class="contact-icon">💼</div>
+                            <div class="contact-icon">ðŸ’¼</div>
                             <h3 class="contact-title">Professional Network</h3>
                             <div class="contact-info">
                                 <a href="https://www.linkedin.com/in/zhuocheng-duan-6b1a27217/" target="_blank">LinkedIn Profile</a><br>
@@ -1705,10 +1674,10 @@
             
             if (isExpanded) {
                 details.classList.remove('expanded');
-                button.textContent = 'Show Abstract ↓';
+                button.textContent = 'Show Abstract â†“';
             } else {
                 details.classList.add('expanded');
-                button.textContent = 'Hide Abstract ↑';
+                button.textContent = 'Hide Abstract â†‘';
             }
         }
 
@@ -1717,3 +1686,4 @@
     </script>
 </body>
 </html>
+
