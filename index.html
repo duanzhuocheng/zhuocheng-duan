@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zhuocheng Duan - PhD Candidate</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
-        
         * {
             margin: 0;
             padding: 0;
@@ -693,7 +691,7 @@
         }
 
         .photo-item::after {
-            content: 'ðŸ”';
+            content: '';
             position: absolute;
             top: 50%;
             left: 50%;
@@ -936,6 +934,764 @@
             transform: translateY(0);
         }
     </style>
+    <style>
+        /* Academic style revision - 2026-06-08 */
+        :root {
+            --academic-ink: #1f2933;
+            --academic-muted: #5b6673;
+            --academic-soft: #eef4f3;
+            --academic-paper: #fbfcfd;
+            --academic-panel: #ffffff;
+            --academic-line: #d9e2ea;
+            --academic-brand: #1f5f63;
+            --academic-brand-dark: #17494c;
+            --academic-accent: #8a5d2f;
+            --academic-shadow: 0 18px 48px rgba(31, 41, 51, 0.08);
+        }
+
+        html {
+            scroll-padding-top: 86px;
+        }
+
+        body {
+            font-family: Aptos, Calibri, "Segoe UI", sans-serif;
+            font-size: 17px;
+            background: var(--academic-paper);
+            color: var(--academic-ink);
+            line-height: 1.68;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font-family: inherit;
+        }
+
+        .container,
+        .content {
+            background: var(--academic-paper);
+        }
+
+        .grid-overlay,
+        .hero::before {
+            display: none;
+        }
+
+        .nav {
+            position: sticky !important;
+            top: 0 !important;
+            bottom: auto !important;
+            left: auto;
+            transform: none;
+            width: 100%;
+            padding: 0;
+            border-radius: 0;
+            border: 0;
+            border-bottom: 1px solid rgba(217, 226, 234, 0.95);
+            background: rgba(251, 252, 253, 0.94);
+            box-shadow: none;
+            backdrop-filter: blur(14px);
+        }
+
+        .nav ul {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 12px 32px;
+            gap: 4px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .nav ul::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav a {
+            color: var(--academic-muted);
+            border-radius: 6px;
+            padding: 8px 10px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .nav a:hover,
+        .nav a.active {
+            background: var(--academic-soft);
+            color: var(--academic-brand-dark);
+            transform: none;
+        }
+
+        .hero {
+            height: auto;
+            min-height: 68vh;
+            align-items: center;
+            justify-content: flex-start;
+            padding: clamp(92px, 14vw, 148px) 0 clamp(76px, 10vw, 120px);
+            overflow: visible;
+            background:
+                linear-gradient(90deg, rgba(31, 95, 99, 0.07) 0, rgba(31, 95, 99, 0) 36%),
+                linear-gradient(180deg, #ffffff 0%, #f4f8f8 100%);
+            border-bottom: 1px solid var(--academic-line);
+            transform: none !important;
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 0 40px;
+            text-align: left;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(190px, 250px);
+            gap: clamp(34px, 5vw, 58px);
+            align-items: center;
+        }
+
+        .hero-content::before {
+            display: none;
+        }
+
+        .hero-copy::before {
+            content: "";
+            display: block;
+            width: 68px;
+            height: 4px;
+            margin-bottom: 30px;
+            background: var(--academic-brand);
+        }
+
+        .hero h1 {
+            font-family: Cambria, Georgia, "Times New Roman", serif;
+            font-size: clamp(3rem, 7vw, 5.4rem);
+            color: #122329;
+            line-height: 1.02;
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
+
+        .portrait-card {
+            width: 100%;
+            max-width: 270px;
+            aspect-ratio: 1 / 1.5;
+            justify-self: end;
+            overflow: hidden;
+            padding: 10px;
+            border: 1px solid var(--academic-line);
+            border-radius: 8px;
+            background: #ffffff;
+            box-shadow: var(--academic-shadow);
+        }
+
+        .portrait-card img,
+        .portrait-placeholder {
+            width: 100%;
+            height: 100%;
+            border-radius: 6px;
+        }
+
+        .portrait-card img {
+            display: block;
+            object-fit: contain;
+            object-position: center top;
+        }
+
+        .portrait-placeholder {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            color: var(--academic-brand-dark);
+            background:
+                linear-gradient(135deg, rgba(31, 95, 99, 0.1), rgba(255, 255, 255, 0.78)),
+                #eef4f3;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .hero .subtitle {
+            color: var(--academic-brand-dark);
+            font-size: clamp(1.02rem, 2vw, 1.28rem);
+            font-weight: 700;
+            letter-spacing: 0;
+            margin-bottom: 18px;
+        }
+
+        .hero .description {
+            max-width: 760px;
+            margin: 0 0 30px;
+            color: var(--academic-muted);
+            font-size: 1.08rem;
+            line-height: 1.78;
+        }
+
+        .cta-button,
+        .doi-link,
+        .pdf-link,
+        .publication-toggle {
+            border-radius: 6px;
+            box-shadow: none;
+            transform: none;
+        }
+
+        .cta-button {
+            padding: 12px 18px;
+            background: var(--academic-brand);
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .cta-button:hover {
+            background: var(--academic-brand-dark);
+            box-shadow: none;
+            transform: none;
+        }
+
+        .section {
+            padding: 70px 0;
+        }
+
+        .section:nth-child(even) {
+            background: #f5f8f8;
+        }
+
+        .section-container {
+            max-width: 1120px;
+            padding: 0 40px;
+        }
+
+        .section-header {
+            margin-bottom: 34px;
+            padding-top: 26px;
+            border-top: 1px solid var(--academic-line);
+            text-align: left;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            padding: 5px 10px;
+            border: 1px solid #d6e6e5;
+            border-radius: 6px;
+            background: var(--academic-soft);
+            font-family: Aptos, Calibri, "Segoe UI", sans-serif;
+            margin-bottom: 14px;
+            color: var(--academic-brand-dark);
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 0;
+        }
+
+        .section-title {
+            font-family: Cambria, Georgia, "Times New Roman", serif;
+            color: #17262c;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.12;
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            max-width: 780px;
+            margin: 0;
+            color: var(--academic-muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: minmax(260px, 0.78fr) minmax(0, 1.22fr);
+            gap: 36px;
+            align-items: start;
+        }
+
+        .about-info,
+        .publication,
+        .timeline-content,
+        .skill-card,
+        .award-card,
+        .contact-card,
+        .photo-category {
+            border: 1px solid var(--academic-line);
+            border-radius: 8px;
+            background: var(--academic-panel);
+            box-shadow: none;
+        }
+
+        .about-info {
+            padding: 24px;
+            position: sticky;
+            top: 90px;
+        }
+
+        .about-info::before {
+            display: none;
+        }
+
+        .about-info h3 {
+            margin-bottom: 22px;
+            font-family: Cambria, Georgia, "Times New Roman", serif;
+            font-size: 1.45rem;
+            line-height: 1.25;
+            color: var(--academic-brand-dark);
+        }
+
+        .info-item {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 14px 0;
+            border-bottom: 1px solid #edf1f4;
+        }
+
+        .info-item:last-child {
+            border-bottom: 0;
+        }
+
+        .info-label {
+            color: var(--academic-muted);
+            font-size: 0.75rem;
+            letter-spacing: 0;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .info-value {
+            color: var(--academic-ink);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .about-description {
+            color: var(--academic-ink);
+            font-size: 1.08rem;
+            line-height: 1.78;
+        }
+
+        .about-description p {
+            margin-bottom: 18px;
+        }
+
+        .publications-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .publication {
+            padding: 24px;
+            border-left: 4px solid rgba(31, 95, 99, 0.55);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .publication:hover {
+            border-left-color: var(--academic-brand);
+            box-shadow: var(--academic-shadow);
+            transform: none;
+        }
+
+        .publication::before,
+        .skill-card::before,
+        .photo-item::after {
+            display: none;
+        }
+
+        .publication h3,
+        .publication-title {
+            font-family: Cambria, Georgia, "Times New Roman", serif;
+            color: #17262c;
+            font-size: 1.36rem;
+            line-height: 1.35;
+        }
+
+        .publication-meta {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            margin: 16px 0 14px;
+            font-size: 1rem;
+            line-height: 1.55;
+        }
+
+        .publication-meta span {
+            display: block;
+        }
+
+        .publication-meta,
+        .timeline-institution,
+        .award-description,
+        .contact-info,
+        .category-description {
+            color: var(--academic-muted);
+        }
+
+        .publication-links,
+        .profile-links {
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .profile-links {
+            justify-content: flex-start;
+            margin-top: 18px;
+        }
+
+        .journal-badge {
+            border-radius: 6px;
+            background: #f0f5f5;
+            color: var(--academic-brand-dark);
+            border: 1px solid #d6e6e5;
+            font-weight: 700;
+        }
+
+        .doi-link,
+        .pdf-link {
+            border: 1px solid var(--academic-line);
+            background: #ffffff;
+            color: var(--academic-brand-dark);
+            font-weight: 700;
+        }
+
+        .doi-link:hover,
+        .pdf-link:hover {
+            background: var(--academic-brand);
+            color: #ffffff;
+            border-color: var(--academic-brand);
+            transform: none;
+        }
+
+        .publication-toggle {
+            margin-top: 14px;
+            border: 1px solid var(--academic-line);
+            background: #f8fafb;
+            color: var(--academic-brand-dark);
+            font-weight: 700;
+        }
+
+        .publication-toggle:hover {
+            background: var(--academic-soft);
+            transform: none;
+        }
+
+        .publication-details {
+            border-top: 0;
+            color: var(--academic-muted);
+        }
+
+        .publication-details.expanded {
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px solid var(--academic-line);
+        }
+
+        .publication-abstract {
+            border-left: 3px solid var(--academic-brand);
+            border-radius: 6px;
+            background: #f7faf9;
+        }
+
+        .timeline {
+            max-width: 100%;
+            padding-left: 0;
+        }
+
+        .timeline::before,
+        .timeline-marker,
+        .timeline-content::before {
+            display: none;
+        }
+
+        .timeline-item {
+            padding-left: 0;
+            margin-bottom: 16px;
+        }
+
+        .timeline-content {
+            padding: 22px 24px;
+        }
+
+        .timeline-content p {
+            margin: 0 0 10px;
+        }
+
+        .timeline-content ul {
+            margin: 8px 0 0 20px;
+            padding: 0;
+        }
+
+        .timeline-content li {
+            margin: 5px 0;
+            padding-left: 2px;
+        }
+
+        .timeline-date {
+            display: inline-block;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            background: var(--academic-soft);
+            color: var(--academic-brand-dark);
+            padding: 4px 8px;
+            font-size: 0.82rem;
+            font-weight: 800;
+        }
+
+        .timeline-title,
+        .award-title,
+        .skill-title,
+        .contact-title,
+        .category-title {
+            font-family: Cambria, Georgia, "Times New Roman", serif;
+            color: #17262c;
+            line-height: 1.34;
+        }
+
+        .timeline-content,
+        .teaching-card,
+        .skill-card,
+        .award-card,
+        .contact-card {
+            font-size: 1.03rem;
+        }
+
+        .teaching-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .teaching-card {
+            padding: 24px;
+            border: 1px solid var(--academic-line);
+            border-left: 4px solid rgba(31, 95, 99, 0.55);
+            border-radius: 8px;
+            background: var(--academic-panel);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .teaching-card:hover {
+            border-left-color: var(--academic-brand);
+            box-shadow: var(--academic-shadow);
+        }
+
+        .teaching-card h3 {
+            margin-bottom: 10px;
+            font-family: Cambria, Georgia, "Times New Roman", serif;
+            color: #17262c;
+            font-size: 1.26rem;
+            line-height: 1.34;
+        }
+
+        .teaching-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .course-code,
+        .teaching-role,
+        .teaching-term {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid var(--academic-line);
+            border-radius: 6px;
+            background: #f7faf9;
+            color: var(--academic-brand-dark);
+            padding: 4px 8px;
+            font-size: 0.84rem;
+            font-weight: 800;
+        }
+
+        .teaching-card p {
+            margin: 0 0 10px;
+            color: var(--academic-ink);
+        }
+
+        .teaching-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .skills-grid,
+        .awards-grid,
+        .contact-grid {
+            gap: 16px;
+            margin-top: 0;
+        }
+
+        .skill-card,
+        .award-card,
+        .contact-card {
+            padding: 22px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .skill-card:hover,
+        .award-card:hover,
+        .contact-card:hover {
+            border-color: rgba(31, 95, 99, 0.45);
+            box-shadow: var(--academic-shadow);
+            transform: none;
+        }
+
+        .skill-icon,
+        .contact-icon {
+            display: none;
+        }
+
+        .award-year {
+            border-radius: 6px;
+            background: var(--academic-soft);
+            color: var(--academic-brand-dark);
+            font-weight: 800;
+        }
+
+        .photography-section {
+            background: #ffffff;
+        }
+
+        .photo-category {
+            padding: 24px;
+        }
+
+        .photo-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .photo-item {
+            border-radius: 8px;
+            box-shadow: none;
+            aspect-ratio: 4 / 3;
+            background: #e8eef1;
+        }
+
+        .photo-item:hover {
+            transform: none;
+            box-shadow: var(--academic-shadow);
+        }
+
+        .photo-item img {
+            filter: saturate(0.96) contrast(1.02);
+        }
+
+        .photo-item:hover img {
+            transform: none;
+        }
+
+        .contact-section {
+            background:
+                linear-gradient(180deg, #f5f8f8 0%, #ffffff 100%);
+            color: var(--academic-ink);
+        }
+
+        .contact-section .section-title,
+        .contact-section .section-subtitle {
+            color: inherit;
+        }
+
+        .contact-card a,
+        .contact-info a {
+            color: var(--academic-brand-dark);
+            font-weight: 700;
+        }
+
+        .footer {
+            padding: 28px 0;
+            border-top: 1px solid var(--academic-line);
+            background: #17262c;
+            color: rgba(255, 255, 255, 0.76);
+        }
+
+        .fade-in,
+        .fade-in.visible {
+            opacity: 1;
+            transform: none;
+            transition: none;
+        }
+
+        @media (max-width: 900px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 34px;
+            }
+
+            .portrait-card {
+                justify-self: start;
+                max-width: 240px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-info {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            html {
+                scroll-padding-top: 76px;
+            }
+
+            .nav {
+                top: 0 !important;
+                bottom: auto !important;
+            }
+
+            .nav ul {
+                padding: 10px 18px;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 74px 0 60px;
+            }
+
+            .hero-content,
+            .section-container {
+                padding: 0 22px;
+            }
+
+            .section {
+                padding: 52px 0;
+            }
+
+            .section-header {
+                margin-bottom: 24px;
+            }
+
+            .publication,
+            .timeline-content,
+            .skill-card,
+            .award-card,
+            .contact-card,
+            .photo-category,
+            .about-info {
+                padding: 18px;
+            }
+
+            .photo-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .publication-links,
+            .profile-links {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="grid-overlay"></div>
@@ -948,6 +1704,7 @@
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#publications" class="nav-link">Publications</a></li>
                 <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#teaching" class="nav-link">Teaching</a></li>
                 <li><a href="#research" class="nav-link">Research</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#awards" class="nav-link">Awards</a></li>
@@ -959,15 +1716,19 @@
         <!-- Hero Section -->
         <section id="hero" class="hero">
             <div class="hero-content">
-                <h1>Zhuocheng Duan</h1>
-                <p class="subtitle">PhD Candidate</p>
-                <p class="description">
-                    Advancing sustainable building design through climate change impact assessment and life cycle analysis of innovative construction materials
-                </p>
-                <a href="#about" class="cta-button">
-                    Explore My Research
-                    <span>â†“</span>
-                </a>
+                <div class="hero-copy">
+                    <h1>Zhuocheng Duan</h1>
+                    <p class="subtitle">PhD Candidate</p>
+                    <p class="description">
+                        Advancing sustainable building design through climate change impact assessment and life cycle analysis of innovative construction materials
+                    </p>
+                    <a href="#about" class="cta-button">
+                        Explore My Research</a>
+                </div>
+                <div class="portrait-card">
+                    <img src="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/images/Formal%20Photo.jpg" alt="Portrait of Zhuocheng Duan" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="portrait-placeholder">Portrait photo</div>
+                </div>
             </div>
         </section>
 
@@ -992,11 +1753,11 @@
                             </div>
                             <div class="info-item">
                                 <span class="info-label">Institution</span>
-                                <span class="info-value">University of Adelaide</span>
+                                <span class="info-value">Adelaide University</span>
                             </div>
                             <div class="info-item">
                                 <span class="info-label">Department</span>
-                                <span class="info-value">Architecture & Civil Engineering</span>
+                                <span class="info-value">School of Civil Engineering and Construction Management</span>
                             </div>
                             <div class="info-item">
                                 <span class="info-label">Scholarship</span>
@@ -1014,7 +1775,7 @@
                         
                         <div class="about-description">
                             <p>
-                                I am a PhD candidate at the University of Adelaide, specializing in the critical intersection of climate change and sustainable building performance. My research addresses one of the most pressing challenges of our time: understanding how evolving climate conditions will impact the energy efficiency and environmental footprint of our built environment.
+                                I am a PhD candidate at Adelaide University, specializing in the critical intersection of climate change and sustainable building performance. My research addresses one of the most pressing challenges of our time: understanding how evolving climate conditions will impact the energy efficiency and environmental footprint of our built environment.
                             </p>
                             
                             <p>
@@ -1052,17 +1813,17 @@
                                 <span>Journal: <strong>Building and Environment</strong> (2026), 297, 114598</span>
                             </div>
                             <div class="publication-links">
-                                <span class="journal-badge">JCR Q1 â€¢ IF: 7.6</span>
-                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2026-Embodied-versus-operational-emissions.pdf" class="pdf-link" target="_blank">ðŸ“„ PDF</a>
-                                <a href="https://doi.org/10.1016/j.buildenv.2026.114598" class="doi-link" target="_blank">ðŸ”— DOI</a>
+                                <span class="journal-badge">JCR Q1 - IF: 7.6</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2026-Embodied-versus-operational-emissions.pdf" class="pdf-link" target="_blank">PDF</a>
+                                <a href="https://doi.org/10.1016/j.buildenv.2026.114598" class="doi-link" target="_blank">DOI</a>
                             </div>
 
-                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract â†“</button>
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract</button>
                             <div class="publication-details">
                                 <div class="publication-abstract">
                                     <h5>Abstract</h5>
                                     <p>This study develops an integrated life cycle assessment framework to examine the trade-off between embodied and operational emissions in building envelope design under climate change. The framework evaluates four scenarios that combine static and dynamic climate and energy conditions for a 10-storey mass timber office building across Australian cities.</p>
-                                    <p><strong>Key Findings:</strong> The results show strong spatial variation in minimum life cycle greenhouse gas emissions, ranging from 1426 kgCO2eq/mÂ² in Hobart to 8322 kgCO2eq/mÂ² in Townsville. Climate change and grid decarbonization interact in non-linear ways, and reducing operational energy beyond the optimum can increase total life cycle emissions. The framework provides quantitative evidence for more durable low-carbon envelope design decisions.</p>
+                                    <p><strong>Key Findings:</strong> The results show strong spatial variation in minimum life cycle greenhouse gas emissions, ranging from 1426 kgCO2eq/m&sup2; in Hobart to 8322 kgCO2eq/m&sup2; in Townsville. Climate change and grid decarbonization interact in non-linear ways, and reducing operational energy beyond the optimum can increase total life cycle emissions. The framework provides quantitative evidence for more durable low-carbon envelope design decisions.</p>
                                 </div>
                             </div>
                         </div>
@@ -1074,17 +1835,17 @@
                                 <span>Journal: <strong>Resources, Conservation & Recycling</strong> (2025), 223, 108491</span>
                             </div>
                             <div class="publication-links">
-                                <span class="journal-badge">JCR Q1 â€¢ IF: 10.9</span>
-                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2025-resources-conservation-recycling-embodied-carbon.pdf" class="pdf-link" target="_blank">ðŸ“„ PDF</a>
-                                <a href="https://doi.org/10.1016/j.resconrec.2025.108491" class="doi-link" target="_blank">ðŸ”— DOI</a>
+                                <span class="journal-badge">JCR Q1 - IF: 10.9</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2025-resources-conservation-recycling-embodied-carbon.pdf" class="pdf-link" target="_blank">PDF</a>
+                                <a href="https://doi.org/10.1016/j.resconrec.2025.108491" class="doi-link" target="_blank">DOI</a>
                             </div>
                             
-                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract â†“</button>
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract</button>
                             <div class="publication-details">
                                 <div class="publication-abstract">
                                     <h5>Abstract</h5>
                                     <p>With global efforts in reducing building operational energy consumption, attention is increasingly turning toward mitigating embodied greenhouse gas (GHG) emissions from building materials manufacturing and processing, particularly for emerging materials like mass timber. Quantifying embodied emissions typically requires the use of GHG emission coefficients from life cycle assessment (LCA) databases. However, significant variability persists in the results of LCA studies while their underlying causes remain largely unexplored.</p>
-                                    <p><strong>Key Findings:</strong> Through detailed examination at material and building levels, the research reveals significant methodological inconsistencies that create substantial variations in embodied emissions. At the material level, mass timber emissions span from -686.80 to 1718.00 kgCO2eq/mÂ³. Building-level analysis (A1-A3) reveals emission ranges of -170.31 to 434.62 kgCO2eq/mÂ² for mass timber construction and 69.79 to 485.95 kgCO2eq/mÂ² for concrete buildings.</p>
+                                    <p><strong>Key Findings:</strong> Through detailed examination at material and building levels, the research reveals significant methodological inconsistencies that create substantial variations in embodied emissions. At the material level, mass timber emissions span from -686.80 to 1718.00 kgCO2eq/m&sup3;. Building-level analysis (A1-A3) reveals emission ranges of -170.31 to 434.62 kgCO2eq/m&sup2; for mass timber construction and 69.79 to 485.95 kgCO2eq/m&sup2; for concrete buildings.</p>
                                     <p><strong>Implications:</strong> The study identifies several challenges in current mass timber LCAs, including inconsistent treatment of biogenic carbon flow, varying system boundary definitions, and inadequate consideration of End-of-Life (EoL) processes for mass timber. This highlights the need for establishing standardized approaches for biogenic carbon accounting and developing more comprehensive and transparent databases to enhance the reliability of mass timber LCA.</p>
                                 </div>
                             </div>
@@ -1097,12 +1858,12 @@
                                 <span>Journal: <strong>Energy</strong> (2025), 319, 134956</span>
                             </div>
                             <div class="publication-links">
-                                <span class="journal-badge">JCR Q1 â€¢ IF: 9.4</span>
-                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2025-energy-australia-office-buildings.pdf" class="pdf-link" target="_blank">ðŸ“„ PDF</a>
-                                <a href="https://doi.org/10.1016/j.energy.2025.134956" class="doi-link" target="_blank">ðŸ”— DOI</a>
+                                <span class="journal-badge">JCR Q1 - IF: 9.4</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2025-energy-australia-office-buildings.pdf" class="pdf-link" target="_blank">PDF</a>
+                                <a href="https://doi.org/10.1016/j.energy.2025.134956" class="doi-link" target="_blank">DOI</a>
                             </div>
                             
-                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract â†“</button>
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract</button>
                             <div class="publication-details">
                                 <div class="publication-abstract">
                                     <h5>Abstract</h5>
@@ -1119,12 +1880,12 @@
                                 <span>Journal: <strong>Applied Energy</strong> (2025), 382, 125331</span>
                             </div>
                             <div class="publication-links">
-                                <span class="journal-badge">JCR Q1 â€¢ IF: 11.0</span>
-                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2025-applied-energy-climate-simulation.pdf" class="pdf-link" target="_blank">ðŸ“„ PDF</a>
-                                <a href="https://doi.org/10.1016/j.apenergy.2025.125331" class="doi-link" target="_blank">ðŸ”— DOI</a>
+                                <span class="journal-badge">JCR Q1 - IF: 11.0</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2025-applied-energy-climate-simulation.pdf" class="pdf-link" target="_blank">PDF</a>
+                                <a href="https://doi.org/10.1016/j.apenergy.2025.125331" class="doi-link" target="_blank">DOI</a>
                             </div>
                             
-                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract â†“</button>
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract</button>
                             <div class="publication-details">
                                 <div class="publication-abstract">
                                     <h5>Abstract</h5>
@@ -1141,12 +1902,12 @@
                                 <span>Journal: <strong>Energy and Buildings</strong> (2024), 322, 114739</span>
                             </div>
                             <div class="publication-links">
-                                <span class="journal-badge">JCR Q1 â€¢ IF: 7.1</span>
-                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2024-energy-buildings-ecm-review.pdf" class="pdf-link" target="_blank">ðŸ“„ PDF</a>
-                                <a href="https://doi.org/10.1016/j.enbuild.2024.114739" class="doi-link" target="_blank">ðŸ”— DOI</a>
+                                <span class="journal-badge">JCR Q1 - IF: 7.1</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2024-energy-buildings-ecm-review.pdf" class="pdf-link" target="_blank">PDF</a>
+                                <a href="https://doi.org/10.1016/j.enbuild.2024.114739" class="doi-link" target="_blank">DOI</a>
                             </div>
                             
-                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract â†“</button>
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract</button>
                             <div class="publication-details">
                                 <div class="publication-abstract">
                                     <h5>Abstract</h5>
@@ -1163,12 +1924,12 @@
                                 <span>Journal: <strong>Journal of Cleaner Production</strong> (2023), 395, 136446</span>
                             </div>
                             <div class="publication-links">
-                                <span class="journal-badge">JCR Q1 â€¢ IF: 10.0</span>
-                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2023-journal-cleaner-production-clt-china.pdf" class="pdf-link" target="_blank">ðŸ“„ PDF</a>
-                                <a href="https://doi.org/10.1016/j.jclepro.2023.136446" class="doi-link" target="_blank">ðŸ”— DOI</a>
+                                <span class="journal-badge">JCR Q1 - IF: 10.0</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2023-journal-cleaner-production-clt-china.pdf" class="pdf-link" target="_blank">PDF</a>
+                                <a href="https://doi.org/10.1016/j.jclepro.2023.136446" class="doi-link" target="_blank">DOI</a>
                             </div>
                             
-                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract â†“</button>
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract</button>
                             <div class="publication-details">
                                 <div class="publication-abstract">
                                     <h5>Abstract</h5>
@@ -1185,12 +1946,12 @@
                                 <span>Journal: <strong>Building and Environment</strong> (2022), 221, 109320</span>
                             </div>
                             <div class="publication-links">
-                                <span class="journal-badge">JCR Q1 â€¢ IF: 7.6</span>
-                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2022-building-environment-mass-timber-review.pdf" class="pdf-link" target="_blank">ðŸ“„ PDF</a>
-                                <a href="https://doi.org/10.1016/j.buildenv.2022.109320" class="doi-link" target="_blank">ðŸ”— DOI</a>
+                                <span class="journal-badge">JCR Q1 - IF: 7.6</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2022-building-environment-mass-timber-review.pdf" class="pdf-link" target="_blank">PDF</a>
+                                <a href="https://doi.org/10.1016/j.buildenv.2022.109320" class="doi-link" target="_blank">DOI</a>
                             </div>
                             
-                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract â†“</button>
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract</button>
                             <div class="publication-details">
                                 <div class="publication-abstract">
                                     <h5>Abstract</h5>
@@ -1207,12 +1968,12 @@
                                 <span>Journal: <strong>Journal of Building Engineering</strong> (2022), 62, 105357</span>
                             </div>
                             <div class="publication-links">
-                                <span class="journal-badge">JCR Q1 â€¢ IF: 7.4</span>
-                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2022-journal-building-engineering-clt-comparison.pdf" class="pdf-link" target="_blank">ðŸ“„ PDF</a>
-                                <a href="https://doi.org/10.1016/j.jobe.2022.105357" class="doi-link" target="_blank">ðŸ”— DOI</a>
+                                <span class="journal-badge">JCR Q1 - IF: 7.4</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2022-journal-building-engineering-clt-comparison.pdf" class="pdf-link" target="_blank">PDF</a>
+                                <a href="https://doi.org/10.1016/j.jobe.2022.105357" class="doi-link" target="_blank">DOI</a>
                             </div>
                             
-                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract â†“</button>
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract</button>
                             <div class="publication-details">
                                 <div class="publication-abstract">
                                     <h5>Abstract</h5>
@@ -1229,12 +1990,12 @@
                                 <span>Journal: <strong>Sustainability</strong> (2022), 14(10), 6174</span>
                             </div>
                             <div class="publication-links">
-                                <span class="journal-badge">JCR Q2 â€¢ IF: 3.3</span>
-                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/sun2022-sustainability-mass-timber-recycling.pdf" class="pdf-link" target="_blank">ðŸ“„ PDF</a>
-                                <a href="https://doi.org/10.3390/su14106174" class="doi-link" target="_blank">ðŸ”— DOI</a>
+                                <span class="journal-badge">JCR Q2 - IF: 3.3</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/sun2022-sustainability-mass-timber-recycling.pdf" class="pdf-link" target="_blank">PDF</a>
+                                <a href="https://doi.org/10.3390/su14106174" class="doi-link" target="_blank">DOI</a>
                             </div>
                             
-                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract â†“</button>
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract</button>
                             <div class="publication-details">
                                 <div class="publication-abstract">
                                     <h5>Abstract</h5>
@@ -1251,12 +2012,12 @@
                                 <span>Journal: <strong>Journal of Asian Architecture and Building Engineering</strong> (2022), 1-18</span>
                             </div>
                             <div class="publication-links">
-                                <span class="journal-badge">JCR Q4 â€¢ IF: 1.6 â€¢ Corresponding Author</span>
-                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/tang2023-jaabe-oze-national-park.pdf" class="pdf-link" target="_blank">ðŸ“„ PDF</a>
-                                <a href="https://doi.org/10.1080/13467581.2022.2047981" class="doi-link" target="_blank">ðŸ”— DOI</a>
+                                <span class="journal-badge">JCR Q4 - IF: 1.6 - Corresponding Author</span>
+                                <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/tang2023-jaabe-oze-national-park.pdf" class="pdf-link" target="_blank">PDF</a>
+                                <a href="https://doi.org/10.1080/13467581.2022.2047981" class="doi-link" target="_blank">DOI</a>
                             </div>
                             
-                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract â†“</button>
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract</button>
                             <div class="publication-details">
                                 <div class="publication-abstract">
                                     <h5>Abstract</h5>
@@ -1266,6 +2027,7 @@
                             </div>
                         </div>
                     </div>
+                </div>
             </section>
 
             <!-- Education Section -->
@@ -1284,10 +2046,11 @@
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
                                 <div class="timeline-date">2024 - Present</div>
-                                <h3 class="timeline-title">PhD in Architecture</h3>
-                                <div class="timeline-institution">University of Adelaide, Australia</div>
+                                <h3 class="timeline-title">PhD in Construction Management</h3>
+                                <div class="timeline-institution">Adelaide University, Australia</div>
                                 <p><strong>Scholarship:</strong> Research Training Program Scholarship</p>
-                                <p><strong>Research Focus:</strong> Impact of climate change on building energy performance and carbon footprint assessment of cross-laminated timber buildings in diverse climate conditions.</p>
+                                <p><strong>Supervisor:</strong> Prof. Jian Zuo</p>
+                                <p><strong>Research Focus:</strong> Whole building life cycle assessment of mass timber construction under climate change.</p>
                             </div>
                         </div>
 
@@ -1309,8 +2072,59 @@
                                 <h3 class="timeline-title">Bachelor of Architecture</h3>
                                 <div class="timeline-institution">Wuhan University of Technology, China</div>
                                 <p><strong>Academic Performance:</strong> 89.42/100 (Top 5% of cohort)</p>
-                                <p><strong>Specialization:</strong> Post-occupancy evaluation methodologies and campus space activation strategies, with focus on evidence-based design and user experience optimization.</p>
+                                <p><strong>Specialization:</strong> Post-occupancy evaluation methodologies, with focus on evidence-based design and user experience optimization.</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Teaching Section -->
+            <section id="teaching" class="section">
+                <div class="section-container">
+                    <div class="section-header fade-in">
+                        <p class="section-number">04</p>
+                        <h2 class="section-title">Teaching</h2>
+                        <p class="section-subtitle">
+                            Tutorial and demonstrator experience in digital construction, coordination, and construction management technology
+                        </p>
+                    </div>
+
+                    <div class="teaching-grid">
+                        <div class="teaching-card fade-in">
+                            <div class="teaching-meta">
+                                <span class="course-code">CONMGMT 2008</span>
+                                <span class="teaching-role">Undergraduate Tutor</span>
+                                <span class="teaching-term">Aug 2025 - Nov 2025</span>
+                            </div>
+                            <h3>Digital Design and Construction</h3>
+                            <p><strong>Institution:</strong> Adelaide University, School of Civil Engineering and Construction Management</p>
+                            <p><strong>Course Coordinator:</strong> Dr. Prince Antwi-Afari</p>
+                            <p>Led weekly tutorials in building energy performance simulation using Ladybug Tools and Grasshopper in Rhinoceros, combining short technical demonstrations with guided practice and assignment support.</p>
+                        </div>
+
+                        <div class="teaching-card fade-in">
+                            <div class="teaching-meta">
+                                <span class="course-code">CONMGMT 3008</span>
+                                <span class="teaching-role">Undergraduate Tutor</span>
+                                <span class="teaching-term">Mar 2025 - Jun 2025</span>
+                            </div>
+                            <h3>Digital Design and Construction - Coordination</h3>
+                            <p><strong>Institution:</strong> Adelaide University, School of Civil Engineering and Construction Management</p>
+                            <p><strong>Course Coordinator:</strong> Dr. Prince Antwi-Afari</p>
+                            <p>Delivered tutorials on construction project management and coordination workflows, including Microsoft Project for scheduling and Navisworks for clash detection and model coordination.</p>
+                        </div>
+
+                        <div class="teaching-card fade-in">
+                            <div class="teaching-meta">
+                                <span class="course-code">CONMGNT 7046</span>
+                                <span class="teaching-role">Postgraduate Demonstrator</span>
+                                <span class="teaching-term">2024/2025</span>
+                            </div>
+                            <h3>Construction Management Technology I</h3>
+                            <p><strong>Institution:</strong> Adelaide University, School of Civil Engineering and Construction Management</p>
+                            <p><strong>Course Coordinator:</strong> Prof. Jian Zuo</p>
+                            <p>Provided academic support across construction management and technology topics, including student consultation, concept clarification, and support for course learning activities.</p>
                         </div>
                     </div>
                 </div>
@@ -1320,7 +2134,7 @@
             <section id="research" class="section">
                 <div class="section-container">
                     <div class="section-header fade-in">
-                        <p class="section-number">04</p>
+                        <p class="section-number">05</p>
                         <h2 class="section-title">Research Experience</h2>
                         <p class="section-subtitle">
                             Contributing to international research initiatives on sustainable building technologies
@@ -1333,7 +2147,7 @@
                             <div class="timeline-content">
                                 <div class="timeline-date">2024 - Present</div>
                                 <h3 class="timeline-title">IEA EBC Annex 89: Implementing Net-Zero Whole Life Carbon Buildings</h3>
-                                <div class="timeline-institution">University of Adelaide â€¢ Research Collaborator</div>
+                                <div class="timeline-institution">Adelaide University - Research Collaborator</div>
                                 <p><strong>Supervisor:</strong> Prof. Jian Zuo</p>
                                 <p>Active participation in international collaboration focused on achieving net-zero carbon emissions in the built environment. Contributing to global research strategies and methodological frameworks for whole life carbon assessment.</p>
                             </div>
@@ -1344,7 +2158,7 @@
                             <div class="timeline-content">
                                 <div class="timeline-date">2020 - 2023</div>
                                 <h3 class="timeline-title">National Key Research and Development Program of China</h3>
-                                <div class="timeline-institution">Tianjin University â€¢ Lead Researcher</div>
+                                <div class="timeline-institution">Tianjin University - Lead Researcher</div>
                                 <p><strong>Project:</strong> Goal and effect-oriented green building design principles and methodologies</p>
                                 <p><strong>Supervisor:</strong> Prof. Qiong Huang</p>
                                 <ul>
@@ -1355,17 +2169,6 @@
                             </div>
                         </div>
 
-                        <div class="timeline-item fade-in">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-date">2018 - 2019</div>
-                                <h3 class="timeline-title">Campus Space Activation Research</h3>
-                                <div class="timeline-institution">Wuhan University of Technology â€¢ Research Assistant</div>
-                                <p><strong>Project:</strong> Study on the activation of negative space in university campus from the perspective of space acupuncture</p>
-                                <p><strong>Supervisor:</strong> Prof. Yi Zhang</p>
-                                <p>Developed innovative approaches to campus space optimization through comprehensive field studies and user behavior analysis across multiple university campuses in China.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -1374,7 +2177,7 @@
             <section id="skills" class="section">
                 <div class="section-container">
                     <div class="section-header fade-in">
-                        <p class="section-number">05</p>
+                        <p class="section-number">06</p>
                         <h2 class="section-title">Technical Expertise</h2>
                         <p class="section-subtitle">
                             Advanced proficiency in architectural design, environmental analysis, and research methodologies
@@ -1383,37 +2186,37 @@
                     
                     <div class="skills-grid">
                         <div class="skill-card fade-in">
-                            <div class="skill-icon">ðŸ‘¨â€ðŸ«</div>
-                            <h4 class="skill-title">Teaching Assistant</h4>
-                            <p>Construction Management Technology, Digital Design and Construction: Coordination at University of Adelaide</p>
+                            <div class="skill-icon"></div>
+                            <h4 class="skill-title">Building Performance Simulation</h4>
+                            <p>Ladybug Tools, Grasshopper, and Rhinoceros workflows for building energy performance and climate-responsive design analysis</p>
                         </div>
 
                         <div class="skill-card fade-in">
-                            <div class="skill-icon">ðŸ“</div>
+                            <div class="skill-icon"></div>
                             <h4 class="skill-title">Peer Reviewer</h4>
                             <p>Nature Cities, Building and Environment, Communications Earth & Environment, Journal of Building Engineering, Intelligent Buildings International</p>
                         </div>
 
                         <div class="skill-card fade-in">
-                            <div class="skill-icon">ðŸ—ï¸</div>
+                            <div class="skill-icon"></div>
                             <h4 class="skill-title">3D Modeling & BIM</h4>
                             <p>AutoCAD, Revit, SketchUp, Rhinoceros, Grasshopper for parametric design and building information modeling</p>
                         </div>
 
                         <div class="skill-card fade-in">
-                            <div class="skill-icon">ðŸŽ¨</div>
+                            <div class="skill-icon"></div>
                             <h4 class="skill-title">Design Visualization</h4>
                             <p>Photoshop, Illustrator, InDesign for professional presentation and architectural visualization</p>
                         </div>
 
                         <div class="skill-card fade-in">
-                            <div class="skill-icon">ðŸ“Š</div>
+                            <div class="skill-icon"></div>
                             <h4 class="skill-title">Data Analysis</h4>
                             <p>Python programming for content analysis, semantic analysis, and environmental data processing</p>
                         </div>
 
                         <div class="skill-card fade-in">
-                            <div class="skill-icon">ðŸ”¬</div>
+                            <div class="skill-icon"></div>
                             <h4 class="skill-title">Research Methods</h4>
                             <p>Life cycle assessment, building performance simulation, systematic review methodologies</p>
                         </div>
@@ -1425,7 +2228,7 @@
             <section id="awards" class="section">
                 <div class="section-container">
                     <div class="section-header fade-in">
-                        <p class="section-number">06</p>
+                        <p class="section-number">07</p>
                         <h2 class="section-title">Awards & Recognition</h2>
                         <p class="section-subtitle">
                             Distinguished academic achievements and professional recognition
@@ -1441,14 +2244,14 @@
 
                         <div class="award-card fade-in">
                             <div class="award-year">2025</div>
-                            <h4 class="award-title">Hans-JÃ¼rgen and Marianne Ohff Research Grant</h4>
-                            <p class="award-description">Research travel grant for collaboration at University of LiÃ¨ge, Belgium - Sustainable Building Design Lab (Oct 2025 - Apr 2026)</p>
+                            <h4 class="award-title">Hans-Juergen and Marianne Ohff Research Grant</h4>
+                            <p class="award-description">Research travel grant for collaboration at University of Liege, Belgium - Sustainable Building Design Lab (Oct 2025 - Apr 2026)</p>
                         </div>
 
                         <div class="award-card fade-in">
                             <div class="award-year">2025</div>
                             <h4 class="award-title">Terence Williamson Prize in Architectural Research</h4>
-                            <p class="award-description">Prize recognizing outstanding achievement in architectural research - School of Architecture and Civil Engineering</p>
+                            <p class="award-description">Prize recognizing outstanding achievement in architectural research - School of Civil Engineering and Construction Management</p>
                         </div>
 
                         <div class="award-card fade-in">
@@ -1494,7 +2297,7 @@
             <section id="photography" class="section photography-section">
                 <div class="section-container">
                     <div class="section-header fade-in">
-                        <p class="section-number">07</p>
+                        <p class="section-number">08</p>
                         <h2 class="section-title">Photography</h2>
                         <p class="section-subtitle">
                             Capturing architectural beauty and environmental moments through my lens
@@ -1532,7 +2335,7 @@
             <section id="contact" class="section contact-section">
                 <div class="section-container">
                     <div class="section-header fade-in">
-                        <p class="section-number">08</p>
+                        <p class="section-number">09</p>
                         <h2 class="section-title">Contact</h2>
                         <p class="section-subtitle">
                             Let's collaborate on sustainable building research and innovation
@@ -1541,7 +2344,7 @@
                     
                     <div class="contact-grid">
                         <div class="contact-card fade-in">
-                            <div class="contact-icon">ðŸ“§</div>
+                            <div class="contact-icon"></div>
                             <h3 class="contact-title">Email</h3>
                             <div class="contact-info">
                                 <a href="mailto:zhuocheng.duan@adelaide.edu.au">zhuocheng.duan@adelaide.edu.au</a>
@@ -1549,18 +2352,18 @@
                         </div>
 
                         <div class="contact-card fade-in">
-                            <div class="contact-icon">ðŸ›ï¸</div>
+                            <div class="contact-icon"></div>
                             <h3 class="contact-title">University Profile</h3>
                             <div class="contact-info">
-                                <a href="https://researchers.adelaide.edu.au/profile/zhuocheng.duan" target="_blank">University of Adelaide</a><br>
-                                School of Architecture and<br>
-                                Civil Engineering<br>
+                                <a href="https://researchers.adelaide.edu.au/profile/zhuocheng.duan" target="_blank">Adelaide University</a><br>
+                                School of Civil Engineering and<br>
+                                Construction Management<br>
                                 Adelaide, South Australia
                             </div>
                         </div>
 
                         <div class="contact-card fade-in">
-                            <div class="contact-icon">ðŸ’¼</div>
+                            <div class="contact-icon"></div>
                             <h3 class="contact-title">Professional Network</h3>
                             <div class="contact-info">
                                 <a href="https://www.linkedin.com/in/zhuocheng-duan-6b1a27217/" target="_blank">LinkedIn Profile</a><br>
@@ -1674,10 +2477,10 @@
             
             if (isExpanded) {
                 details.classList.remove('expanded');
-                button.textContent = 'Show Abstract â†“';
+                button.textContent = 'Show Abstract';
             } else {
                 details.classList.add('expanded');
-                button.textContent = 'Hide Abstract â†‘';
+                button.textContent = 'Hide Abstract';
             }
         }
 
