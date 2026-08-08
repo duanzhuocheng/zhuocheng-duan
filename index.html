@@ -357,6 +357,26 @@
             letter-spacing: 0.5px;
         }
 
+        .nature-index-badge,
+        .highly-cited-badge {
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.35px;
+            box-shadow: 0 3px 10px rgba(15, 23, 42, 0.12);
+        }
+
+        .nature-index-badge {
+            background: linear-gradient(135deg, #8f1d2c, #c63c48);
+        }
+
+        .highly-cited-badge {
+            background: linear-gradient(135deg, #b7791f, #e0a526);
+            color: #1f2937;
+        }
+
         .doi-link {
             color: var(--accent-gold);
             text-decoration: none;
@@ -1807,6 +1827,30 @@
                     
                     <div class="publications-grid">
                         <div class="publication fade-in">
+                            <h3>Spatiotemporal supply-demand matching in residential building rooftop photovoltaics (PV) under climate change: A cross-climate zone assessment</h3>
+                            <div class="publication-meta">
+                                <span>Authors: <strong>Duan, Z.</strong>, Attia, S., Omrany, H., Chang, R., &amp; Zuo, J.</span>
+                                <span>Journal: <strong>Applied Energy</strong> (2026), 421, 128210</span>
+                            </div>
+                            <div class="publication-links">
+                                <span class="journal-badge">JCR Q1 - IF: 12.2</span>
+                                <span class="nature-index-badge" title="Applied Energy is included in the Nature Index journal list">&#9670; Nature Index Journal</span>
+                                <a href="https://raw.githubusercontent.com/duanzhuocheng/zhuocheng-duan/main/pdfs/duan2026-applied-energy-rooftop-pv-supply-demand-matching.pdf" class="pdf-link" target="_blank" rel="noopener noreferrer">PDF</a>
+                                <a href="https://doi.org/10.1016/j.apenergy.2026.128210" class="doi-link" target="_blank" rel="noopener noreferrer">DOI</a>
+                            </div>
+
+                            <button class="publication-toggle" onclick="toggleDetails(this)">Show Abstract</button>
+                            <div class="publication-details">
+                                <div class="publication-abstract">
+                                    <h5>Abstract</h5>
+                                    <p>This study investigates spatiotemporal supply-demand matching for residential rooftop photovoltaics (PV) under future climate change across 27 cities representing all ASHRAE climate zones. The analysis integrates annual, monthly, and daily performance metrics to evaluate how climate change alters both building energy demand and PV generation, revealing substantial regional variation in self-sufficiency and self-consumption outcomes.</p>
+                                    <p><strong>Key Findings:</strong> Under SSP585_2080, extreme hot regions experience rising energy demand and limited PV output, while cool and cold regions benefit from reduced demand but remain constrained by winter solar availability. The study further shows that extreme heat events can create sharp energy deficits in tropical climates, and polar regions continue to face zero-generation periods during winter.</p>
+                                    <p><strong>Implications:</strong> These results highlight the need for climate-specific strategies combining envelope upgrades, demand-side interventions, and supplementary energy sources to address the inherent limitations of rooftop solar generation in different climates.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="publication fade-in">
                             <h3>Embodied versus operational emissions: A life cycle optimization framework for building envelope design under climate change</h3>
                             <div class="publication-meta">
                                 <span>Authors: <strong>Duan, Z.</strong>, Omrany, H., & Zuo, J.</span>
@@ -1859,6 +1903,7 @@
                             </div>
                             <div class="publication-links">
                                 <span class="journal-badge">JCR Q1 - IF: 9.4</span>
+                                <span class="nature-index-badge" title="Energy is included in the Nature Index journal list">&#9670; Nature Index Journal</span>
                                 <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2025-energy-australia-office-buildings.pdf" class="pdf-link" target="_blank">PDF</a>
                                 <a href="https://doi.org/10.1016/j.energy.2025.134956" class="doi-link" target="_blank">DOI</a>
                             </div>
@@ -1881,6 +1926,8 @@
                             </div>
                             <div class="publication-links">
                                 <span class="journal-badge">JCR Q1 - IF: 11.0</span>
+                                <span class="highly-cited-badge" title="Recognized as a Highly Cited Paper">&#9733; Highly Cited Paper</span>
+                                <span class="nature-index-badge" title="Applied Energy is included in the Nature Index journal list">&#9670; Nature Index Journal</span>
                                 <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2025-applied-energy-climate-simulation.pdf" class="pdf-link" target="_blank">PDF</a>
                                 <a href="https://doi.org/10.1016/j.apenergy.2025.125331" class="doi-link" target="_blank">DOI</a>
                             </div>
@@ -1925,6 +1972,7 @@
                             </div>
                             <div class="publication-links">
                                 <span class="journal-badge">JCR Q1 - IF: 10.0</span>
+                                <span class="nature-index-badge" title="Journal of Cleaner Production is included in the Nature Index journal list">&#9670; Nature Index Journal</span>
                                 <a href="https://github.com/duanzhuocheng/zhuocheng-duan/raw/main/pdfs/duan2023-journal-cleaner-production-clt-china.pdf" class="pdf-link" target="_blank">PDF</a>
                                 <a href="https://doi.org/10.1016/j.jclepro.2023.136446" class="doi-link" target="_blank">DOI</a>
                             </div>
